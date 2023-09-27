@@ -7,7 +7,6 @@ from django.contrib.auth.models import User
 from .models import Image, UserProfile, Topic, Tag
 from .serializers import ImageSerializer, UserSerializer, TopicSerializer,UserProfileSerializer,TagSerializer
 
-
 #
 # class HomeView(View):
 #     model = ChuDe
@@ -17,8 +16,18 @@ from .serializers import ImageSerializer, UserSerializer, TopicSerializer,UserPr
 #     def get(self, request):
 #         images = Image.objects.all()
 #         return render(request, 'home.html', {'images': images})
+def home(req):
+    images = Image.objects.all()
+    topics = Topic.objects.all()
+    context = {
+        'images': images,
+        'topics': topics,
+    }
+    return render(req, 'home.html', context)
+
 
 class HomeView(View):
+    template_name = 'home.html'
     def get(self, request):
         # Lấy danh sách tất cả hình ảnh và chủ đề
         images = Image.objects.all()
@@ -30,16 +39,6 @@ class HomeView(View):
         }
 
         return render(request, 'home.html', context)
-
-from .models import Image, UserProfile
-
-
-class HomeView(View):
-    def get(self, request):
-        images = Image.objects.all()
-        return render(request, 'home.html', {'images': images})
-
-
 class UserProfileView(View):
     def get(self, request, username):
         user_profile = UserProfile.objects.get(user__username=username)

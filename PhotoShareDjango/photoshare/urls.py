@@ -3,7 +3,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 from rest_framework import routers
 
-from .views import HomeView, UserProfileView, ViewImageView, UserViewSet,ImageViewSet,TagViewSet,TopicViewSet,UserProfileViewSet
+from .views import HomeView, UserProfileView, ViewImageView, UserViewSet,ImageViewSet,TagViewSet,TopicViewSet,UserProfileViewSet,home
 
 router = routers.DefaultRouter()
 router.register(r'users', UserViewSet)
@@ -17,7 +17,7 @@ from django.urls import path
 from .views import HomeView, UserProfileView, ViewImageView
 
 urlpatterns = [
-    path('', HomeView.as_view(), name='home'),
+    path('', home, name='home'),
     path('user/<str:username>/', UserProfileView.as_view(), name='user_profile'),
     path('image/<int:image_id>/', ViewImageView.as_view(), name='view_image'),
     path('api/', include(router.urls)),
