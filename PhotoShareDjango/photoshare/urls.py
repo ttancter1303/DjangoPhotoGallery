@@ -17,10 +17,10 @@ from django.urls import path
 from .views import HomeView, UserProfileView, ViewImageView
 
 urlpatterns = [
-    path('', home, name='home'),
+    # path('', home, name='home'),
     path('user/<str:username>/', UserProfileView.as_view(), name='user_profile'),
     path('image/<int:image_id>/', ViewImageView.as_view(), name='view_image'),
-    path('api/', include(router.urls)),
+    path('', include(router.urls)),
     path('api-auth/', include('rest_framework.urls', namespace='rest_framework'))
 
 ]
