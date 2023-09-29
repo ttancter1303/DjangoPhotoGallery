@@ -1,10 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+
+{% block content %}
+  <h2>Tải lên hình ảnh</h2>
+  <form id="upload-form" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Tải lên</button>
+  </form>
+
+  <div id="progress-container" style="display: none;">
+    <div id="progress-bar"></div>
+    <div id="progress-text">Đang tải lên: <span id="progress-percent">0%</span></div>
+  </div>
+
+  <div id="uploaded-image" style="display: none;">
+    <h3>Hình ảnh đã tải lên:</h3>
+    <img id="uploaded-image-preview" src="" alt="Hình ảnh đã tải lên">
+  </div>
+
+  <a href="{% url 'success_page' %}" style="display: none;" id="success-link">Đã tải lên thành công</a>
+
+  <script>
+    document.getElementById('upload-form').addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      const formData = new FormData(this);
+
+      const xhr = new XMLHttpRequest();
+
+      xhr.upload.onprogress = function (event) {
+        if (event.lengthComputable) {
+          const percentComplete = (event.loaded / event.total) * 100;
+          document.getElementById('progress-bar').style.width = percentComplete + '%';
+          document.getElementById('progress-percent').textContent = percentComplete.toFixed(2) + '%';
+        }
+      };
+
+      xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+          const response = JSON.parse(xhr.responseText);
+          document.getElementById('uploaded-image-preview').src = response.image_url;
+          document.getElementById('uploaded-image').style.display = 'block';
+          document.getElementById('progress-container').style.display = 'none';
+          document.getElementById('success-link').style.display = 'block';
+        }
+      };
+
+      xhr.open('POST', '{% url 'upload_image' %}', true);
+      xhr.send(formData);
+
+      document.getElementById('progress-container').style.display = 'block';
+      document.getElementById('progress-bar').style.width = '0%';
+      document.getElementById('progress-percent').textContent = '0%';
+    });
+  </script>
+
+{% endblock %}
 </body>
 </html>

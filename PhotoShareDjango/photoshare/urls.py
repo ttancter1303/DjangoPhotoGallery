@@ -2,8 +2,9 @@ from django.urls import include, path
 from django.conf import settings
 from django.conf.urls.static import static
 from rest_framework import routers
-
-from .views import HomeView, UserProfileView, ViewImageView, UserViewSet,ImageViewSet,TagViewSet,TopicViewSet,UserProfileViewSet,home
+from . import views
+from .views import HomeView, UserProfileView, ViewImageView, UserViewSet, ImageViewSet, TagViewSet, TopicViewSet, \
+    UserProfileViewSet, home, ImageUploadView, MyAccount
 
 router = routers.DefaultRouter()
 router.register(r'users', UserViewSet)
@@ -17,12 +18,17 @@ from django.urls import path
 from .views import HomeView, UserProfileView, ViewImageView
 
 urlpatterns = [
-    # path('', home, name='home'),
+    path('', home, name='home'),
     path('user/<str:username>/', UserProfileView.as_view(), name='user_profile'),
     path('image/<int:image_id>/', ViewImageView.as_view(), name='view_image'),
-    path('', include(router.urls)),
-    path('api-auth/', include('rest_framework.urls', namespace='rest_framework'))
-
+    path('api/', include(router.urls)),
+    path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
+    path('upload/', views.upload_image, name='upload_image'),
+    path('success/', views.success_page, name='success_page'),
+    path('images/<str:image_name>/', views.get_image, name='get_image'),
+    path('create_tag/', views.create_tag, name='create_tag'),
+    path('tag_list/', views.tag_list, name='tag_list'),
+    path('account/',MyAccount.as_view(),name = 'my_account')
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

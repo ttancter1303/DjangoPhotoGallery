@@ -1,8 +1,19 @@
-from django.shortcuts import render
+import os
+
+from django.conf import settings
+from django.contrib.auth.decorators import login_required
+from django.http import HttpResponse, JsonResponse
+from django.shortcuts import render, redirect
+from django.utils.decorators import method_decorator
 from django.views import View
+from django.views.generic import UpdateView
 
 from rest_framework import viewsets, permissions
 from django.contrib.auth.models import User
+from rest_framework.generics import CreateAPIView
+from django.urls import reverse_lazy
+
+from .forms import ImageUploadForm, TagForm
 
 from .models import Image, UserProfile, Topic, Tag
 from .serializers import ImageSerializer, UserSerializer, TopicSerializer,UserProfileSerializer,TagSerializer
@@ -72,8 +83,68 @@ class UserProfileViewSet(viewsets.ModelViewSet):
 class TagViewSet(viewsets.ModelViewSet):
     queryset = Tag.objects.all()
     serializer_class = TagSerializer
-    
+class ImageUploadView(CreateAPIView):
+    queryset = Image.objects.all()
+    serializer_class = ImageSerializer
 class ViewImageView(View):
     def get(self, request, image_id):
         image = Image.objects.get(pk=image_id)
         return render(request, 'view_image.html', {'image': image})
+
+# def upload_image(request):
+#     if request.method == 'POST':
+#         form = ImageUploadForm(request.POST, request.FILES)
+#         if form.is_valid():
+#             form.save()
+#             return redirect('success_page')  # Chuyển hướng đến trang thành công sau khi tải lên
+#     else:
+#         form = ImageUploadForm()
+#     return render(request, 'upload_image.html', {'form': form})
+def upload_image(request):
+    if request.method == 'POST':
+        form = ImageUploadForm(request.POST, request.FILES)
+        if form.is_valid():
+            uploaded_image = form.save()  # Lưu dữ liệu vào cơ sở dữ liệu
+            image_url = uploaded_image.image.url
+            response_data = {'image_url': image_url}
+            return JsonResponse(response_data)
+    else:
+        form = ImageUploadForm()
+    return render(request, 'upload_image.html', {'form': form})
+def get_image(request, image_name):
+    # Xác định đường dẫn tới tệp ảnh trong thư mục media
+    image_path = os.path.join(settings.MEDIA_ROOT, 'images', image_name)
+
+    try:
+        # Mở tệp ảnh và đọc dữ liệu
+        with open(image_path, 'rb') as image_file:
+            response = HttpResponse(image_file.read(), content_type='image/jpeg')
+            return response
+    except FileNotFoundError:
+        # Trả về 404 nếu tệp ảnh không tồn tại
+        return HttpResponse(status=404)
+
+def create_tag(request):
+    if request.method == 'POST':
+        form = TagForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('tag_list')
+    else:
+        form = TagForm()
+    return render(request, 'create_tag.html', {'form': form})
+def success_page(request):
+    return render(request, 'success_page.html')
+def tag_list(request):
+    tags = Tag.objects.all()
+    return render(request, 'tag_list.html', {'tags': tags})
+
+@method_decorator(login_required, name='dispatch')
+class MyAccount(UpdateView):
+  model = User
+  fields = ('first_name', 'last_name', 'email', )
+  template_name = 'my_account.html'
+  success_url = reverse_lazy('my_account')
+
+  def get_object(self):
+    return self.request.user

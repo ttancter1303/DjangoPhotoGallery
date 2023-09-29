@@ -1,0 +1,16 @@
+body {
+  background-image: url(../img/1316190.jpeg);
+}
+  
+.logo {
+  font-family: 'Peralta', cursive;
+}
+  
+.logo a {
+  color: whitesmoke;
+}
+  
+.logo a:hover,
+.logo a:active {
+  text-decoration: none;
+}

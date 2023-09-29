@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'api',
     'photoshare',
+    'member',
 ]
 REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
@@ -123,9 +124,23 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = "static/"
+
+STATICFILES_DIRS = [
+    BASE_DIR / 'static'
+]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+LOGOUT_REDIRECT_URL = 'home'
+
+#-- Đăng nhập --
+LOGIN_REDIRECT_URL = 'home'
+
+#-- email --
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+#--
+LOGIN_URL = 'login'

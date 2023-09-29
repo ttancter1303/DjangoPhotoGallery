@@ -1,10 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Title</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-
+  {% block content %}
+    <h2>Thành công</h2>
+    <p>Hình ảnh của bạn đã được tải lên thành công.</p>
+    <a href="{% url 'upload_image' %}">Tải lên thêm hình ảnh</a>
+  {% endblock %}
 </body>
 </html>
