@@ -29,8 +29,6 @@
   flex-direction: column;
 }
 .image-item {
-  border-radius: 1rem;
-  border: 1px solid black;
   width: 100%;
   position: relative;
   display: flex;
@@ -44,4 +42,5 @@
   object-fit: fill;
   display: block; 
   max-height: 100%;
+  border-radius: 1rem;
 }
