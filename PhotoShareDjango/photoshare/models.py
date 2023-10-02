@@ -10,7 +10,7 @@ class UserProfile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     avatar = models.ImageField(upload_to=user_avatar_path, default='avatars/default-avatar.png', blank=True, null=True)
     bio = models.TextField(blank=True)
-    library = models.CharField(max_length=255, unique=True) #đây là thư viện lưu trữ hình ảnh của user
+    library = models.CharField(max_length=255, unique=True)
     def __str__(self):
         return self.user.username
 
@@ -29,10 +29,8 @@ class Image(models.Model):
     image = models.ImageField(upload_to='images/')
     caption = models.TextField(blank=True)
     upload_date = models.DateTimeField(auto_now_add=True)
-    tags = models.ManyToManyField(Tag)
-    topics = models.ManyToManyField(Topic)
-    # Thêm trường để lưu đường dẫn tới hình ảnh trong thư viện của người dùng
-    image_path = models.CharField(max_length=255)
+    tags = models.ManyToManyField(Tag, blank=True)
+    topics = models.ForeignKey(Topic, on_delete=models.SET_NULL, null=True, blank=True)
     def __str__(self):
         return f"Image by {self.user.username} uploaded on {self.upload_date}"
 

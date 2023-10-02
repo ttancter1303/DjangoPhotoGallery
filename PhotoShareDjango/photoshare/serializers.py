@@ -26,4 +26,4 @@ class TagSerializer(serializers.HyperlinkedModelSerializer):
 class ImageSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Image
-        fields = ['user','image','caption','upload_date','tags','topics','image_path']
+        fields = ['user','image','caption','upload_date','tags','topics']

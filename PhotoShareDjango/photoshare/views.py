@@ -13,7 +13,7 @@ from django.contrib.auth.models import User
 from rest_framework.generics import CreateAPIView
 from django.urls import reverse_lazy
 
-from .forms import ImageUploadForm, TagForm
+from .forms import ImageUploadForm, TagForm, SearchForm
 
 from .models import Image, UserProfile, Topic, Tag
 from .serializers import ImageSerializer, UserSerializer, TopicSerializer,UserProfileSerializer,TagSerializer
@@ -148,3 +148,26 @@ class MyAccount(UpdateView):
 
   def get_object(self):
     return self.request.user
+
+
+def search_images(request):
+    form = SearchForm(request.GET)
+    images = Image.objects.all()
+
+    if form.is_valid():
+        search_query = form.cleaned_data['search_query']
+        tag = form.cleaned_data['tag']
+        topic = form.cleaned_data['topic']
+
+        if search_query:
+            images = images.filter(title__icontains=search_query)
+
+        if tag:
+            images = images.filter(tags__name__icontains=tag)
+
+        if topic:
+            images = images.filter(topics__name__icontains=topic)
+
+    return render(request, 'search_results.html', {'form': form, 'images': images})
+def topic():
+    return None

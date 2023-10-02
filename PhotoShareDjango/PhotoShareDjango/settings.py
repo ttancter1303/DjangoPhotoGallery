@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'api',
     'photoshare',
     'member',
+    'widget_tweaks',
 ]
 REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
