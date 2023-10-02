@@ -5,10 +5,24 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  
 }
 .box {
+  border: 1px solid black;
+  width: 100%;
   display: flex;
   flex-direction: row;
-  margin-right: 150px;
+}
+.box .py-5{
+  width: 100%;
+}
+.box .box-item{
+  width: 100%;
+  display: flex;
+  gap: 1.2rem;
+  justify-content: space-between;
+}
+
+.image-item{
+  border-radius: 2rem;
+  
 }

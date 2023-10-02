@@ -2,7 +2,31 @@
 {% block content %}
   <div class="py-5 bg-light">
     <div class="box-item image-gallery">
-      <div class="row">
+      <div class="col1">
+        {% for image in images %}
+        <div class="image-item">
+          <img src="{{ image.image.url }}" alt="{{ image.title }}" width="250" height="" margin="10" />
+          <p>{{ image.title }}</p>
+        </div>
+      {% endfor %} 
+      </div>
+      <div class="col2">
+        {% for image in images %}
+        <div class="image-item">
+          <img src="{{ image.image.url }}" alt="{{ image.title }}" width="250" height="" margin="10" />
+          <p>{{ image.title }}</p>
+        </div>
+      {% endfor %} 
+      </div>
+      <div class="col3">
+        {% for image in images %}
+        <div class="image-item">
+          <img src="{{ image.image.url }}" alt="{{ image.title }}" width="250" height="" margin="10" />
+          <p>{{ image.title }}</p>
+        </div>
+      {% endfor %} 
+      </div>
+      <div class="col4">
         {% for image in images %}
         <div class="image-item">
           <img src="{{ image.image.url }}" alt="{{ image.title }}" width="250" height="" margin="10" />
