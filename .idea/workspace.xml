@@ -5,31 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="df86badf-ce7e-4e56-8827-58dadea4266a" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/PhotoShareDjango.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PhotoShareDjango/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/PhotoShareDjango/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PhotoShareDjango/media/images/dog1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PhotoShareDjango/media/images/dog2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PhotoShareDjango/media/images/fish.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PhotoShareDjango/media/images/hug2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PhotoShareDjango/media/images/hug3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PhotoShareDjango/media/images/hugging.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PhotoShareDjango/media/images/puppy.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PhotoShareDjango/media/images/rabit.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PhotoShareDjango/photoshare/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PhotoShareDjango/photoshare/migrations/0002_alter_userprofile_avatar.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PhotoShareDjango/photoshare/migrations/0003_remove_image_topics_image_topic_alter_image_tags.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PhotoShareDjango/photoshare/migrations/0004_rename_topic_image_topics.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PhotoShareDjango/photoshare/migrations/0005_remove_image_image_path.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PhotoShareDjango/photoshare/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/PhotoShareDjango/photoshare/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PhotoShareDjango/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/PhotoShareDjango/templates/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PhotoShareDjango/templates/search_results.html" beforeDir="false" afterPath="$PROJECT_DIR$/PhotoShareDjango/templates/search_results.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PhotoShareDjango/templates/upload_image.html" beforeDir="false" afterPath="$PROJECT_DIR$/PhotoShareDjango/templates/upload_image.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,6 +14,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="2" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 1
