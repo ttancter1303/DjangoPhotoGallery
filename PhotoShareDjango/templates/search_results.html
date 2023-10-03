@@ -12,8 +12,8 @@
                     <div class="card mb-4 shadow-sm">
                         <img src="{{ image.image_file.url }}" alt="{{ image.title }}" class="img-fluid">
                         <div class="card-body">
-                            <h5 class="card-title">{{ image.title }}</h5>
-                            <p class="card-text">{{ image.description }}</p>
+                            <h5 class="card-title">{{ image.caption }}</h5>
+                            <img src="{{ image.image.url }}" alt="{{ image.caption }}" />
                             <p class="card-text">Tags:
                                 {% for tag in image.tags.all %}
                                     <span class="badge badge-primary">{{ tag.name }}</span>

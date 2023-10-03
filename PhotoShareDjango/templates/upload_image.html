@@ -18,7 +18,6 @@
     <img id="uploaded-image-preview" src="" alt="Hình ảnh đã tải lên">
   </div>
 
-  <a href="{% url 'success_page' %}" style="display: none;" id="success-link">Đã tải lên thành công</a>
 
   <script>
     document.getElementById('upload-form').addEventListener('submit', function (e) {
@@ -54,5 +53,6 @@
       document.getElementById('progress-percent').textContent = '0%';
     });
   </script>
+  <a href="{% url 'success_page' %}" style="display: none;" id="success-link">Đã tải lên thành công</a>
 
 {% endblock %}

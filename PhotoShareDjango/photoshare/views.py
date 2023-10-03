@@ -160,7 +160,7 @@ def search_images(request):
         topic = form.cleaned_data['topic']
 
         if search_query:
-            images = images.filter(title__icontains=search_query)
+            images = images.filter(caption__icontains=search_query)
 
         if tag:
             images = images.filter(tags__name__icontains=tag)

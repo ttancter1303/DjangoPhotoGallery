@@ -5,35 +5,38 @@
       <div class="col">
         {% for image in images %}
         <div class="image-item">
-          <img src="{{ image.image.url }}" alt="{{ image.title }}" />
-          <p>{{ image.title }}</p>
+          <img src="{{ image.image.url }}" alt="{{ image.caption }}" />
+          <p>{{ image.caption }}</p>
         </div>
       {% endfor %} 
       </div>
+
       <div class="col">
-        {% for image in images %}
-        <div class="image-item">
-          <img src="{{ image.image.url }}" alt="{{ image.title }}" />
-          <p>{{ image.title }}</p>
-        </div>
-      {% endfor %} 
-      </div>
+  {% for image in images %}
+  <div class="image-item">
+    <img src="{{ image.image.url }}" alt="{{ image.caption }}" />
+    <p>{{ image.caption }}</p>
+  </div>
+{% endfor %}
+</div>
+
       <div class="col">
-        {% for image in images %}
-        <div class="image-item">
-          <img src="{{ image.image.url }}" alt="{{ image.title }}" />
-          <p>{{ image.title }}</p>
-        </div>
-      {% endfor %} 
-      </div>
+  {% for image in images %}
+  <div class="image-item">
+    <img src="{{ image.image.url }}" alt="{{ image.caption }}" />
+    <p>{{ image.caption }}</p>
+  </div>
+{% endfor %}
+</div>
+
       <div class="col">
-        {% for image in images %}
-        <div class="image-item">
-          <img src="{{ image.image.url }}" alt="{{ image.title }}"  />
-          <p>{{ image.title }}</p>
-        </div>
-      {% endfor %} 
-      </div>
+  {% for image in images %}
+  <div class="image-item">
+    <img src="{{ image.image.url }}" alt="{{ image.caption }}" />
+    <p>{{ image.caption }}</p>
+  </div>
+{% endfor %}
+</div>
     </div>
   </div>
 {% endblock %}
