@@ -6,6 +6,7 @@ from django.http import HttpResponse, JsonResponse
 from django.shortcuts import render, redirect
 from django.utils.decorators import method_decorator
 from django.views import View
+from django.views.decorators.csrf import csrf_exempt
 from django.views.generic import UpdateView
 
 from rest_framework import viewsets, permissions
@@ -28,7 +29,7 @@ from .serializers import ImageSerializer, UserSerializer, TopicSerializer,UserPr
 #         images = Image.objects.all()
 #         return render(request, 'home.html', {'images': images})
 def home(req):
-    images = Image.objects.all()
+    images = Image.objects.order_by('-upload_date')
     topics = Topic.objects.all()
     context = {
         'images': images,
@@ -100,19 +101,45 @@ class ViewImageView(View):
 #     else:
 #         form = ImageUploadForm()
 #     return render(request, 'upload_image.html', {'form': form})
+# @login_required
+# @csrf_exempt
+# def upload_image(request):
+#     if request.method == 'POST' and request.FILES:
+#         uploaded_file = request.FILES['file']
+#         user = request.user
+#
+#         # Đảm bảo thư mục lưu trữ tồn tại
+#         storage_dir = os.path.join(settings.MEDIA_ROOT, 'uploads', str(user.id))
+#         os.makedirs(storage_dir, exist_ok=True)
+#
+#         # Lưu tệp vào thư mục lưu trữ
+#         file_path = os.path.join(storage_dir, uploaded_file.name)
+#         with open(file_path, 'wb+') as destination:
+#             for chunk in uploaded_file.chunks():
+#                 destination.write(chunk)
+#
+#         # Trả về một JSON response cho client
+#         response_data = {'message': 'Hình ảnh đã được tải lên thành công.'}
+#         return JsonResponse(response_data)
+#     else:
+#         return JsonResponse({'error': 'Yêu cầu không hợp lệ.'})
+@login_required
 def upload_image(request):
     if request.method == 'POST':
         form = ImageUploadForm(request.POST, request.FILES)
         if form.is_valid():
-            uploaded_image = form.save()  # Lưu dữ liệu vào cơ sở dữ liệu
-            image_url = uploaded_image.image.url
+            # Gán người dùng hiện tại cho hình ảnh trước khi lưu vào cơ sở dữ liệu
+            image = form.save(commit=False)
+            image.user = request.user  # Sử dụng request.user để lấy người dùng đang đăng nhập
+            image.save()
+
+            image_url = image.image.url
             response_data = {'image_url': image_url}
             return JsonResponse(response_data)
     else:
         form = ImageUploadForm()
     return render(request, 'upload_image.html', {'form': form})
 def get_image(request, image_name):
-    # Xác định đường dẫn tới tệp ảnh trong thư mục media
     image_path = os.path.join(settings.MEDIA_ROOT, 'images', image_name)
 
     try:

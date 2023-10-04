@@ -1,13 +1,13 @@
 {% extends "base.html" %}
 {% block content %}
-  <div class="py-5 bg-light">
+    <div class="py-5 bg-light">
     <div class="box-item image-gallery">
         {% for image in images %}
         <div class="image-item">
           <img src="{{ image.image.url }}" alt="{{ image.caption }}" />
           <div><p>{{ image.caption }}</p></div>
         </div>
-      {% endfor %} 
+      {% endfor %}
     </div>
-  </div>
+    </div>
 {% endblock %}
