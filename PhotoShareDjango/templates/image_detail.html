@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h2>{{ image.title }}</h2>
+  <p>Tên: {{ image.title }}</p>
+  <p>Tag: {% for tag in image.tags.all %}{{ tag.name }}{% if not forloop.last %}, {% endif %}{% endfor %}</p>
+  <p>Topic: {{ image.topic }}</p>
+  <img src="{{ image.image.url }}" alt="{{ image.title }}">
+
+  <h3>Hình ảnh có cùng tag</h3>
+  <div class="slideshow">
+    {% for img in images_with_same_tag %}
+      <img src="{{ img.image.url }}" alt="{{ img.title }}">
+    {% endfor %}
+  </div>
+
+  <h3>Hình ảnh có cùng topic</h3>
+  <div class="slideshow">
+    {% for img in images_with_same_topic %}
+      <img src="{{ img.image.url }}" alt="{{ img.title }}">
+    {% endfor %}
+  </div>
+{% endblock %}

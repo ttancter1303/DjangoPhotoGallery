@@ -5,12 +5,34 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="df86badf-ce7e-4e56-8827-58dadea4266a" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/PhotoShareDjango/templates/create_topics.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PhotoShareDjango/templates/image_detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/pythonProject1.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/pythonProject1.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PhotoShareDjango/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/PhotoShareDjango/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PhotoShareDjango/photoshare/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/PhotoShareDjango/photoshare/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PhotoShareDjango/photoshare/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/PhotoShareDjango/photoshare/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PhotoShareDjango/photoshare/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/PhotoShareDjango/photoshare/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PhotoShareDjango/static/css/gallery.css" beforeDir="false" afterPath="$PROJECT_DIR$/PhotoShareDjango/static/css/gallery.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PhotoShareDjango/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/PhotoShareDjango/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PhotoShareDjango/templates/create_tag.html" beforeDir="false" afterPath="$PROJECT_DIR$/PhotoShareDjango/templates/create_tag.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PhotoShareDjango/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/PhotoShareDjango/templates/home.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -26,13 +48,14 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main"
   }
-}</component>
+}]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">

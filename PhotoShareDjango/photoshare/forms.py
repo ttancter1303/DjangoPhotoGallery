@@ -1,5 +1,5 @@
 from django import forms
-from .models import Image
+from .models import Image, Topic
 from .models import Tag
 
 class ImageUploadForm(forms.ModelForm):
@@ -7,7 +7,10 @@ class ImageUploadForm(forms.ModelForm):
         model = Image
         fields = ['image','caption','tags','topics']
 
-
+class TopicForm(forms.ModelForm):
+    class Meta:
+        model = Topic
+        fields = ['name', 'description']
 class TagForm(forms.ModelForm):
     class Meta:
         model = Tag

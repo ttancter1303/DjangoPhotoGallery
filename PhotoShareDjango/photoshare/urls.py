@@ -21,16 +21,18 @@ urlpatterns = [
     path('', views.home, name='home'),
     path('topics',views.topic,name = 'topics'),
     path('user/<str:username>/', UserProfileView.as_view(), name='user_profile'),
-    path('image/<int:image_id>/', ViewImageView.as_view(), name='view_image'),
+    # path('image/<int:image_id>/', ViewImageView.as_view(), name='view_image'),
     path('api/', include(router.urls)),
     path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
     path('upload/', views.upload_image, name='upload_image'),
     path('success/', views.success_page, name='success_page'),
-    path('images/<str:image_name>/', views.get_image, name='get_image'),
     path('create_tag/', views.create_tag, name='create_tag'),
     path('tag_list/', views.tag_list, name='tag_list'),
     path('account/',MyAccount.as_view(),name = 'my_account'),
     path('search/', views.search_images, name='search_images'),
+    path('topics/', views.create_topics, name='create_topics'),
+    path('image/<int:image_id>/', views.image_detail, name='image_detail'),
+
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -1,11 +1,36 @@
 {% extends "base.html" %}
 {% block content %}
+    <div class="floating-container">
+      <div class="floating-button">+</div>
+      <div class="element-container">
+
+        <a href="{% url 'upload_image' %}">
+            <span class="float-element tooltip-left">
+                <i class="material-icons hover-i">image</i>
+            </span>
+        </a>
+
+        <a href="{% url 'create_tag' %}">
+        <span class="float-element">
+          <i class="material-icons">style</i>
+        </span>
+          </a>
+
+        <a href="{% url 'create_topics' %}">
+            <span class="float-element">
+                <i class="material-icons">topic</i>
+            </span>
+            </a>
+      </div>
+    </div>
     <div class="py-5 bg-light">
     <div class="box-item image-gallery">
         {% for image in images %}
         <div class="image-item">
-          <img src="{{ image.image.url }}" alt="{{ image.caption }}" />
-          <div><p>{{ image.caption }}</p></div>
+
+  <a href="{% url 'image_detail' image_id=image.id %}">
+    <img src="{{ image.image.url }}" alt="{{ image.caption }}" />
+  </a>          <div><p>{{ image.caption }}</p></div>
         </div>
       {% endfor %}
     </div>

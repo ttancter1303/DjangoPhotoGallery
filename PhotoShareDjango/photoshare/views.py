@@ -3,7 +3,7 @@ import os
 from django.conf import settings
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse, JsonResponse
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.utils.decorators import method_decorator
 from django.views import View
 from django.views.decorators.csrf import csrf_exempt
@@ -14,7 +14,7 @@ from django.contrib.auth.models import User
 from rest_framework.generics import CreateAPIView
 from django.urls import reverse_lazy
 
-from .forms import ImageUploadForm, TagForm, SearchForm
+from .forms import ImageUploadForm, TagForm, SearchForm, TopicForm
 
 from .models import Image, UserProfile, Topic, Tag
 from .serializers import ImageSerializer, UserSerializer, TopicSerializer,UserProfileSerializer,TagSerializer
@@ -139,17 +139,13 @@ def upload_image(request):
     else:
         form = ImageUploadForm()
     return render(request, 'upload_image.html', {'form': form})
-def get_image(request, image_name):
-    image_path = os.path.join(settings.MEDIA_ROOT, 'images', image_name)
-
-    try:
-        # Mở tệp ảnh và đọc dữ liệu
-        with open(image_path, 'rb') as image_file:
-            response = HttpResponse(image_file.read(), content_type='image/jpeg')
-            return response
-    except FileNotFoundError:
-        # Trả về 404 nếu tệp ảnh không tồn tại
-        return HttpResponse(status=404)
+def image_detail(request, image_id):
+    image = get_object_or_404(Image, pk=image_id)
+    topics = image.topics.all() if image.topics else []
+    topic_names = [topic.name for topic in topics]
+    images_with_same_tag = Image.objects.filter(tags__in=image.tags.all()).exclude(id=image_id)
+    images_with_same_topic = Image.objects.filter(topics__name__in=topic_names).exclude(id=image_id)
+    return render(request, 'image_detail.html', {'image': image, 'images_with_same_tag': images_with_same_tag, 'images_with_same_topic': images_with_same_topic})
 
 def create_tag(request):
     if request.method == 'POST':
@@ -165,7 +161,17 @@ def success_page(request):
 def tag_list(request):
     tags = Tag.objects.all()
     return render(request, 'tag_list.html', {'tags': tags})
+def create_topics(request):
+    topics = Topic.objects.all()  # Lấy danh sách các topic hiện có
+    if request.method == 'POST':
+        form = TopicForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('create_topics')  # Chuyển hướng trang sau khi tạo topic thành công
+    else:
+        form = TopicForm()
 
+    return render(request, 'create_topics.html', {'topics': topics, 'form': form})
 @method_decorator(login_required, name='dispatch')
 class MyAccount(UpdateView):
   model = User
