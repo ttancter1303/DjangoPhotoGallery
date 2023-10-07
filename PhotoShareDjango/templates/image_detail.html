@@ -2,10 +2,23 @@
 
 {% block content %}
   <h2>{{ image.title }}</h2>
-  <p>Tên: {{ image.title }}</p>
-  <p>Tag: {% for tag in image.tags.all %}{{ tag.name }}{% if not forloop.last %}, {% endif %}{% endfor %}</p>
-  <p>Topic: {{ image.topic }}</p>
-  <img src="{{ image.image.url }}" alt="{{ image.title }}">
+  <p>{{ image.title }}</p>
+  <p>{% for tag in image.tags.all %}{{ tag.name }}{% if not forloop.last %}, {% endif %}{% endfor %}</p>
+  <p>{{ image.topic }}</p>
+
+    <div class="center">
+      <img src="{{ image.image.url }}" alt="{{ image.title }}">
+    </div>
+
+    <div class="button-container">
+        <button class="button">
+          <a href="{% url 'download_image' image_id=image.id %}"><i class="fa-solid fa-download" ></i> Download</a>
+
+
+        </button>
+        <button class="button"><i class="fas fa-save"></i>Save</button>
+    </div>
+
 
   <h3>Hình ảnh có cùng tag</h3>
   <div class="slideshow">

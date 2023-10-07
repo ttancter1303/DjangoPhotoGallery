@@ -32,6 +32,7 @@ urlpatterns = [
     path('search/', views.search_images, name='search_images'),
     path('topics/', views.create_topics, name='create_topics'),
     path('image/<int:image_id>/', views.image_detail, name='image_detail'),
+    path('download/<int:image_id>/', views.download_image, name='download_image'),
 
 ]
 if settings.DEBUG:

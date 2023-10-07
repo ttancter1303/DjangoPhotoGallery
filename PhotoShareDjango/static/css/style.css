@@ -1,0 +1,24 @@
+*{
+    margin: 0;
+}
+.center {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+.image{
+    margin-top: 50px;
+    width: 500px;
+}
+.button-container {
+    display: flex;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+  .button {
+    margin-right: 10px; /* Khoảng cách giữa các nút */
+  }

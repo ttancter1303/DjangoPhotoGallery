@@ -2,7 +2,7 @@ import os
 
 from django.conf import settings
 from django.contrib.auth.decorators import login_required
-from django.http import HttpResponse, JsonResponse
+from django.http import HttpResponse, JsonResponse, FileResponse
 from django.shortcuts import render, redirect, get_object_or_404
 from django.utils.decorators import method_decorator
 from django.views import View
@@ -202,5 +202,13 @@ def search_images(request):
             images = images.filter(topics__name__icontains=topic)
 
     return render(request, 'search_results.html', {'form': form, 'images': images})
+def download_image(request, image_id):
+    image = get_object_or_404(Image, pk=image_id)
+    image_file = image.image.file
+    response = FileResponse(image_file, as_attachment=True)
+    response['Content-Disposition'] = f'attachment; filename="{image_file.name}"'
+    return response
+
+
 def topic():
     return None
