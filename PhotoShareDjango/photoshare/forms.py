@@ -3,6 +3,10 @@ from .models import Image, Topic
 from .models import Tag
 
 class ImageUploadForm(forms.ModelForm):
+    tags = forms.ModelMultipleChoiceField(
+        queryset=Tag.objects.all(),
+        widget=forms.CheckboxSelectMultiple,
+    )
     class Meta:
         model = Image
         fields = ['image','caption','tags','topics']
@@ -12,6 +16,7 @@ class TopicForm(forms.ModelForm):
         model = Topic
         fields = ['name', 'description']
 class TagForm(forms.ModelForm):
+
     class Meta:
         model = Tag
         fields = ['name']

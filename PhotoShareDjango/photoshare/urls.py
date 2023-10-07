@@ -33,6 +33,8 @@ urlpatterns = [
     path('topics/', views.create_topics, name='create_topics'),
     path('image/<int:image_id>/', views.image_detail, name='image_detail'),
     path('download/<int:image_id>/', views.download_image, name='download_image'),
+    path('profile/', views.view_profile, name='view_profile'),
+    path('save_image_to_library/<int:image_id>/', views.save_image_to_library, name='save_image_to_library'),
 
 ]
 if settings.DEBUG:

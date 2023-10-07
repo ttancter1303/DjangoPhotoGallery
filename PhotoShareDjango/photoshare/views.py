@@ -2,6 +2,7 @@ import os
 
 from django.conf import settings
 from django.contrib.auth.decorators import login_required
+from django.core.checks import messages
 from django.http import HttpResponse, JsonResponse, FileResponse
 from django.shortcuts import render, redirect, get_object_or_404
 from django.utils.decorators import method_decorator
@@ -132,7 +133,7 @@ def upload_image(request):
             image = form.save(commit=False)
             image.user = request.user  # Sử dụng request.user để lấy người dùng đang đăng nhập
             image.save()
-
+            request.user.userprofile.library.add(image)
             image_url = image.image.url
             response_data = {'image_url': image_url}
             return JsonResponse(response_data)
@@ -146,7 +147,18 @@ def image_detail(request, image_id):
     images_with_same_tag = Image.objects.filter(tags__in=image.tags.all()).exclude(id=image_id)
     images_with_same_topic = Image.objects.filter(topics__name__in=topic_names).exclude(id=image_id)
     return render(request, 'image_detail.html', {'image': image, 'images_with_same_tag': images_with_same_tag, 'images_with_same_topic': images_with_same_topic})
+@login_required  # Đảm bảo người dùng đã đăng nhập để sử dụng tính năng này
+def save_image_to_library(request, image_id):
+    # Lấy đối tượng ảnh từ cơ sở dữ liệu
+    image = get_object_or_404(Image, pk=image_id)
 
+    # Kiểm tra nếu ảnh đã tồn tại trong thư viện của người dùng thì không thêm nữa
+    if not request.user.userprofile.library.filter(pk=image_id).exists():
+        # Thêm ảnh vào thư viện của người dùng
+        request.user.userprofile.library.add(image)
+        messages.success(request, 'Image saved to your library successfully.')
+
+    return redirect('image_detail', image_id=image_id)
 def create_tag(request):
     if request.method == 'POST':
         form = TagForm(request.POST)
@@ -181,7 +193,10 @@ class MyAccount(UpdateView):
 
   def get_object(self):
     return self.request.user
-
+@login_required
+def view_profile(request):
+    user_profile = get_object_or_404(UserProfile, user=request.user)
+    return render(request, 'profile.html', {'user_profile': user_profile})
 
 def search_images(request):
     form = SearchForm(request.GET)

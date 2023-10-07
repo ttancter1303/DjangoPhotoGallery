@@ -13,10 +13,11 @@
     <div class="button-container">
         <button class="button">
           <a href="{% url 'download_image' image_id=image.id %}"><i class="fa-solid fa-download" ></i> Download</a>
-
-
         </button>
-        <button class="button"><i class="fas fa-save"></i>Save</button>
+        <form method="post" action="{% url 'save_image_to_library' image.id %}">
+          {% csrf_token %}
+          <button type="submit" class="button"><i class="fas fa-save"></i> Save</button>
+        </form>
     </div>
 
 

@@ -6,14 +6,6 @@ def user_avatar_path(instance, filename):
     # Tạo tên tệp hình ảnh dựa trên ID của người dùng
     return path_join('avatars', f'{instance.user.id}', filename)
 
-class UserProfile(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
-    avatar = models.ImageField(upload_to=user_avatar_path, default='avatars/default-avatar.png', blank=True, null=True)
-    bio = models.TextField(blank=True)
-    library = models.CharField(max_length=255, unique=True)
-    def __str__(self):
-        return self.user.username
-
 class Topic(models.Model):
     name = models.CharField(max_length=255, unique=True)
     description = models.TextField(blank=True)
@@ -34,3 +26,11 @@ class Image(models.Model):
     def __str__(self):
         return f"Image by {self.user.username} uploaded on {self.upload_date}"
 
+class UserProfile(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    avatar = models.ImageField(upload_to=user_avatar_path, default='avatars/default-avatar.png', blank=True, null=True)
+    bio = models.TextField(blank=True)
+    library = models.ManyToManyField(Image, related_name='user_profiles', blank=True,
+                                     null=True)  # Sử dụng ManyToManyField có thể null
+    def __str__(self):
+        return self.user.username
