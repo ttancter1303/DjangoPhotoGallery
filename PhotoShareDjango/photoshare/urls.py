@@ -3,8 +3,8 @@ from django.conf import settings
 from django.conf.urls.static import static
 from rest_framework import routers
 from . import views
-from .views import  UserProfileView, ViewImageView, UserViewSet, ImageViewSet, TagViewSet, TopicViewSet, \
-    UserProfileViewSet, ImageUploadView, MyAccount, topic
+from .views import UserProfileView, ViewImageView, UserViewSet, ImageViewSet, TagViewSet, TopicViewSet, \
+    UserProfileViewSet, ImageUploadView, topic, EditUserProfile, remove_image_from_library
 
 router = routers.DefaultRouter()
 router.register(r'users', UserViewSet)
@@ -19,7 +19,7 @@ from .views import  UserProfileView, ViewImageView
 
 urlpatterns = [
     path('', views.home, name='home'),
-    path('topics',views.topic,name = 'topics'),
+    path('topics/',views.topic,name = 'topics'),
     path('user/<str:username>/', UserProfileView.as_view(), name='user_profile'),
     # path('image/<int:image_id>/', ViewImageView.as_view(), name='view_image'),
     path('api/', include(router.urls)),
@@ -28,12 +28,14 @@ urlpatterns = [
     path('success/', views.success_page, name='success_page'),
     path('create_tag/', views.create_tag, name='create_tag'),
     path('tag_list/', views.tag_list, name='tag_list'),
-    path('account/',MyAccount.as_view(),name = 'my_account'),
+    path('remove_image/<int:image_id>/', remove_image_from_library, name='remove_image_from_library'),
+
     path('search/', views.search_images, name='search_images'),
     path('topics/', views.create_topics, name='create_topics'),
     path('image/<int:image_id>/', views.image_detail, name='image_detail'),
     path('download/<int:image_id>/', views.download_image, name='download_image'),
     path('profile/', views.view_profile, name='view_profile'),
+    path('profile/edit_profile/<int:pk>/', EditUserProfile.as_view(), name='edit_user_profile'),
     path('save_image_to_library/<int:image_id>/', views.save_image_to_library, name='save_image_to_library'),
 
 ]

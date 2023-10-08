@@ -9,10 +9,14 @@
       <p><strong>Tên người dùng:</strong> {{ user_profile.user.username }}</p>
       <p><strong>Email:</strong> {{ user_profile.user.email }}</p>
       <p><strong>Thông tin bản thân:</strong> {{ user_profile.bio }}</p>
+      <a href="{% url 'edit_user_profile' pk=user_profile.user.pk %}">Edit Profile</a>
       <p><strong>Thư viện hình ảnh:</strong></p>
       <ul>
         {% for image in user_profile.library.all %}
-          <li><img src="{{ image.image.url }}" alt="{{ image.caption }}"></li>
+          <li>
+            <img src="{{ image.image.url }}" alt="{{ image.caption }}">
+            <a href="{% url 'remove_image_from_library' image.id %}">Remove</a>
+          </li>
         {% endfor %}
       </ul>
     </div>

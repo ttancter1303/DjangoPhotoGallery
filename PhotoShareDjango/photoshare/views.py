@@ -185,14 +185,11 @@ def create_topics(request):
 
     return render(request, 'create_topics.html', {'topics': topics, 'form': form})
 @method_decorator(login_required, name='dispatch')
-class MyAccount(UpdateView):
-  model = User
-  fields = ('first_name', 'last_name', 'email', )
-  template_name = 'my_account.html'
-  success_url = reverse_lazy('my_account')
-
-  def get_object(self):
-    return self.request.user
+class EditUserProfile(UpdateView):
+    model = UserProfile
+    fields = ['user', 'avatar', 'bio']  # Chỉ định các trường có thể chỉnh sửa
+    template_name = 'edit_user_profile.html'  # Tạo template để hiển thị biểu mẫu
+    success_url = reverse_lazy('user_profile_detail')
 @login_required
 def view_profile(request):
     user_profile = get_object_or_404(UserProfile, user=request.user)
@@ -223,6 +220,21 @@ def download_image(request, image_id):
     response = FileResponse(image_file, as_attachment=True)
     response['Content-Disposition'] = f'attachment; filename="{image_file.name}"'
     return response
+
+@login_required
+def remove_image_from_library(request, image_id):
+    user_profile = get_object_or_404(UserProfile, user=request.user)
+    image = get_object_or_404(Image, id=image_id)
+
+    # Kiểm tra xem ảnh có thuộc thư viện của người dùng không
+    if image in user_profile.library.all():
+        user_profile.library.remove(image)
+        user_profile.save()
+        return redirect('view_profile')
+    else:
+        # Xử lý trường hợp ảnh không tồn tại trong thư viện
+        # Hoặc đã bị xóa trước đó
+        return redirect('view_profile')
 
 
 def topic():
