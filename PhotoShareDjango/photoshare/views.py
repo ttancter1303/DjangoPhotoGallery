@@ -2,13 +2,13 @@ import os
 
 from django.conf import settings
 from django.contrib.auth.decorators import login_required
-from django.core.checks import messages
 from django.http import HttpResponse, JsonResponse, FileResponse
 from django.shortcuts import render, redirect, get_object_or_404
 from django.utils.decorators import method_decorator
 from django.views import View
 from django.views.decorators.csrf import csrf_exempt
 from django.views.generic import UpdateView
+
 
 from rest_framework import viewsets, permissions
 from django.contrib.auth.models import User
@@ -124,19 +124,35 @@ class ViewImageView(View):
 #         return JsonResponse(response_data)
 #     else:
 #         return JsonResponse({'error': 'Yêu cầu không hợp lệ.'})
+# @login_required
+# def upload_image(request):
+#     if request.method == 'POST':
+#         form = ImageUploadForm(request.POST, request.FILES)
+#         if form.is_valid():
+#             # Gán người dùng hiện tại cho hình ảnh trước khi lưu vào cơ sở dữ liệu
+#             image = form.save(commit=False)
+#             image.user = request.user
+#             image.save()
+#             request.user.userprofile.library.add(image)
+#             image_url = image.image.url
+#
+#             # Trả về đường dẫn ảnh bằng JsonResponse
+#             response_data = {'image_url': image_url}
+#             return JsonResponse(response_data)
+#     else:
+#         form = ImageUploadForm()
+#     return render(request, 'upload_image.html', {'form': form})
 @login_required
 def upload_image(request):
     if request.method == 'POST':
         form = ImageUploadForm(request.POST, request.FILES)
         if form.is_valid():
-            # Gán người dùng hiện tại cho hình ảnh trước khi lưu vào cơ sở dữ liệu
             image = form.save(commit=False)
-            image.user = request.user  # Sử dụng request.user để lấy người dùng đang đăng nhập
+            image.user = request.user
             image.save()
             request.user.userprofile.library.add(image)
-            image_url = image.image.url
-            response_data = {'image_url': image_url}
-            return JsonResponse(response_data)
+
+            return redirect('home')
     else:
         form = ImageUploadForm()
     return render(request, 'upload_image.html', {'form': form})
@@ -156,7 +172,6 @@ def save_image_to_library(request, image_id):
     if not request.user.userprofile.library.filter(pk=image_id).exists():
         # Thêm ảnh vào thư viện của người dùng
         request.user.userprofile.library.add(image)
-        messages.success(request, 'Image saved to your library successfully.')
 
     return redirect('image_detail', image_id=image_id)
 def create_tag(request):
@@ -192,9 +207,26 @@ class EditUserProfile(UpdateView):
     success_url = reverse_lazy('user_profile_detail')
 @login_required
 def view_profile(request):
-    user_profile = get_object_or_404(UserProfile, user=request.user)
-    return render(request, 'profile.html', {'user_profile': user_profile})
+    try:
+        user_profile = UserProfile.objects.get(user=request.user)
+    except UserProfile.DoesNotExist:
+        user_profile = UserProfile.objects.create(user=request.user)
+    if request.method == 'POST':
+        image_id = request.POST.get('image_id')
+        image_to_add = Image.objects.get(pk=image_id)
+        user_profile.library.add(image_to_add)
+        return HttpResponse(status=200)  # Trả về một HTTP response cho client
 
+    return render(request, 'profile.html', {'user_profile': user_profile})
+class UpdateProfile(UpdateView):
+    model = UserProfile
+    fields = ['avatar']
+    template_name = 'update_profile.html'
+    success_url = reverse_lazy('view_profile')
+
+    def form_valid(self, form):
+        response_data = {"avatar_url": form.instance.avatar.url}
+        return JsonResponse(response_data)
 def search_images(request):
     form = SearchForm(request.GET)
     images = Image.objects.all()

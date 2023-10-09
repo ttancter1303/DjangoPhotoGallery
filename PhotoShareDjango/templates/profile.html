@@ -5,11 +5,19 @@
     <div class="avatar">
       <img src="{{ user_profile.avatar.url }}" alt="{{ user_profile.user.username }}'s avatar">
     </div>
+    <button id="change-avatar-button">Thay đổi Avatar</button>
+    <div id="avatar-popup" style="display: none;">
+      <form id="avatar-form" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Cập nhật Ảnh Đại diện</button>
+      </form>
+    </div>
     <div class="user-details">
-      <p><strong>Tên người dùng:</strong> {{ user_profile.user.username }}</p>
+      <p>{{ user_profile.user.username }}</p>
       <p><strong>Email:</strong> {{ user_profile.user.email }}</p>
-      <p><strong>Thông tin bản thân:</strong> {{ user_profile.bio }}</p>
-      <a href="{% url 'edit_user_profile' pk=user_profile.user.pk %}">Edit Profile</a>
+      <p>{{ user_profile.bio }}</p>
+<!--      <a href="{% url 'edit_user_profile' pk=user_profile.user.pk %}">Edit Profile</a>-->
       <p><strong>Thư viện hình ảnh:</strong></p>
       <ul>
         {% for image in user_profile.library.all %}

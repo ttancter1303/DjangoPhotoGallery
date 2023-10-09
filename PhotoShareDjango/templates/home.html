@@ -1,38 +1,72 @@
 {% extends "base.html" %}
 {% block content %}
-    <div class="floating-container">
-      <div class="floating-button">+</div>
-      <div class="element-container">
+  <div class="row">
+    <div class="column">
+      <div class="content">
+        <img src="mountains.jpg" alt="Mountains" style="width:100%">
+        <h3>My Work</h3>
+        <p>Lorem ipsum..</p>
+      </div>
+    </div>
+    <div class="column">
+      <div class="content">
+        <img src="lights.jpg" alt="Lights" style="width:100%">
+        <h3>My Work</h3>
+        <p>Lorem ipsum..</p>
+      </div>
+    </div>
+    <div class="column">
+      <div class="content">
+        <img src="nature.jpg" alt="Nature" style="width:100%">
+        <h3>My Work</h3>
+        <p>Lorem ipsum..</p>
+      </div>
+    </div>
+    <div class="column">
+      <div class="content">
+        <img src="mountains.jpg" alt="Mountains" style="width:100%">
+        <h3>My Work</h3>
+        <p>Lorem ipsum..</p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="floating-container">
+    <div class="floating-button">+</div>
+    <div class="element-container">
 
-        <a href="{% url 'upload_image' %}">
-            <span class="float-element tooltip-left">
-                <i class="material-icons hover-i">image</i>
-            </span>
-        </a>
+      <a href="{% url 'upload_image' %}">
+        <span class="float-element tooltip-left">
+          <i class="material-icons hover-i">image</i>
+        </span>
+      </a>
 
-        <a href="{% url 'create_tag' %}">
+      <a href="{% url 'create_tag' %}">
         <span class="float-element">
           <i class="material-icons">style</i>
         </span>
-          </a>
+      </a>
 
-        <a href="{% url 'create_topics' %}">
-            <span class="float-element">
-                <i class="material-icons">topic</i>
-            </span>
-            </a>
-      </div>
+      <a href="{% url 'create_topics' %}">
+        <span class="float-element">
+          <i class="material-icons">topic</i>
+        </span>
+      </a>
     </div>
-    <div class="py-5 bg-light">
+  </div>
+  <div class="py-5 bg-light">
     <div class="box-item image-gallery">
-        {% for image in images %}
-        <div class="image-item">
+      {% for image in images %}
+      <div class="image-item">
 
-  <a href="{% url 'image_detail' image_id=image.id %}">
-    <img src="{{ image.image.url }}" alt="{{ image.caption }}" />
-  </a>          <div><p>{{ image.caption }}</p></div>
+        <a href="{% url 'image_detail' image_id=image.id %}">
+          <img src="{{ image.image.url }}" alt="{{ image.caption }}" />
+        </a>
+        <div>
+          <p>{{ image.caption }}</p>
         </div>
+      </div>
       {% endfor %}
     </div>
-    </div>
+  </div>
 {% endblock %}

@@ -1,25 +1,18 @@
 {% extends "base.html" %}
 
 {% block content %}
-<script>
-  function hideForm() {
-    document.getElementById("upload-form").style.display = "none";
-    alert(Ảnh đã được tải lên!");
-            return false;
-  }
-</script>
 <h2>Tải lên hình ảnh</h2>
 <form id="upload-form" onsubmit="return hideForm();" method="post" enctype="multipart/form-data">
   {% csrf_token %}
   {{ form.as_p }}
-<!--  <label for="{{ form.tags.id_for_label }}">Tags:</label>-->
-<!--  {% for tag in form.tags %}-->
-<!--  <div class="form-check">-->
-<!--    {{ tag }}-->
-<!--    <label class="form-check-label" for="{{ tag.id_for_label }}">{{ tag.choice_label }}</label>-->
-<!--  </div>-->
-<!--  {% endfor %}-->
-  <button type="submit">Tải lên</button>
+  <!--  <label for="{{ form.tags.id_for_label }}">Tags:</label>-->
+  <!--  {% for tag in form.tags %}-->
+  <!--  <div class="form-check">-->
+  <!--    {{ tag }}-->
+  <!--    <label class="form-check-label" for="{{ tag.id_for_label }}">{{ tag.choice_label }}</label>-->
+  <!--  </div>-->
+  <!--  {% endfor %}-->
+  <button type="submit" onclick="return hideForm();">Tải lên</button>
 </form>
 
 <div id="progress-container" style="display: none;">
@@ -31,8 +24,6 @@
   <h3>Hình ảnh đã tải lên:</h3>
   <img id="uploaded-image-preview" src="" alt="Hình ảnh đã tải lên">
 </div>
-
-
 <script>
   const uploadForm = document.getElementById('upload-form');
   const imageInput = document.querySelector('input[type="file"]');
@@ -52,7 +43,10 @@
       reader.readAsDataURL(file);
     }
   });
-
+  function hideForm() {
+    document.getElementById("upload-form").style.display = "none";
+    
+  }
   uploadForm.addEventListener('submit', function (e) {
     e.preventDefault();
 
@@ -86,7 +80,6 @@
     document.getElementById('progress-percent').textContent = '0%';
   });
 </script>
-
 <a href="{% url 'success_page' %}" style="display: none;" id="success-link">Đã tải lên thành công</a>
 
 {% endblock %}
