@@ -4,7 +4,7 @@ from django.conf.urls.static import static
 from rest_framework import routers
 from . import views
 from .views import UserProfileView, ViewImageView, UserViewSet, ImageViewSet, TagViewSet, TopicViewSet, \
-    UserProfileViewSet, ImageUploadView, topic, EditUserProfile, remove_image_from_library
+    UserProfileViewSet, ImageUploadView, EditUserProfile, remove_image_from_library
 
 router = routers.DefaultRouter()
 router.register(r'users', UserViewSet)
@@ -30,6 +30,7 @@ urlpatterns = [
     path('profile/update_avatar/', views.UpdateProfile.as_view(), name='update_avatar'),
     path('search/', views.search_images, name='search_images'),
     path('topics/', views.create_topics, name='create_topics'),
+    path('topic/<int:topic_id>/', views.topic_detail, name='topic_detail'),
     path('image/<int:image_id>/', views.image_detail, name='image_detail'),
     path('download/<int:image_id>/', views.download_image, name='download_image'),
     path('profile/', views.view_profile, name='view_profile'),

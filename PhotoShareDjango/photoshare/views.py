@@ -156,13 +156,24 @@ def upload_image(request):
     else:
         form = ImageUploadForm()
     return render(request, 'upload_image.html', {'form': form})
+
+
 def image_detail(request, image_id):
     image = get_object_or_404(Image, pk=image_id)
-    topics = image.topics.all() if image.topics else []
+
+    try:
+        topics = image.topics.all()
+    except AttributeError:
+        topics = []
+
     topic_names = [topic.name for topic in topics]
     images_with_same_tag = Image.objects.filter(tags__in=image.tags.all()).exclude(id=image_id)
     images_with_same_topic = Image.objects.filter(topics__name__in=topic_names).exclude(id=image_id)
-    return render(request, 'image_detail.html', {'image': image, 'images_with_same_tag': images_with_same_tag, 'images_with_same_topic': images_with_same_topic})
+
+    return render(request, 'image_detail.html', {'image': image, 'images_with_same_tag': images_with_same_tag,
+                                                 'images_with_same_topic': images_with_same_topic})
+
+
 @login_required  # Đảm bảo người dùng đã đăng nhập để sử dụng tính năng này
 def save_image_to_library(request, image_id):
     # Lấy đối tượng ảnh từ cơ sở dữ liệu
@@ -267,7 +278,12 @@ def remove_image_from_library(request, image_id):
         # Xử lý trường hợp ảnh không tồn tại trong thư viện
         # Hoặc đã bị xóa trước đó
         return redirect('view_profile')
+def topic_detail(request, topic_id):
+    # Lấy thông tin chủ đề hoặc trả về 404 nếu không tìm thấy
+    topic = get_object_or_404(Topic, pk=topic_id)
 
+    # Lấy danh sách các ảnh thuộc chủ đề đó
+    images = Image.objects.filter(topics=topic)
 
-def topic():
-    return None
+    return render(request, 'topic_detail.html', {'topic': topic, 'images': images})
+
