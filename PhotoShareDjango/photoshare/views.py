@@ -160,18 +160,20 @@ def upload_image(request):
 
 def image_detail(request, image_id):
     image = get_object_or_404(Image, pk=image_id)
-
+    tags = image.tags.all()
     try:
         topics = image.topics.all()
     except AttributeError:
         topics = []
 
     topic_names = [topic.name for topic in topics]
-    images_with_same_tag = Image.objects.filter(tags__in=image.tags.all()).exclude(id=image_id)
-    images_with_same_topic = Image.objects.filter(topics__name__in=topic_names).exclude(id=image_id)
+    images_with_same_tag = Image.objects.filter(tags__in=tags).exclude(id=image_id)
+    images_with_same_topic = Image.objects.filter(topics__in=topics).exclude(id=image_id)
 
-    return render(request, 'image_detail.html', {'image': image, 'images_with_same_tag': images_with_same_tag,
-                                                 'images_with_same_topic': images_with_same_topic})
+    return render(request, 'image_detail.html', {
+        'image': image,
+        'images_with_same_tag': images_with_same_tag,
+        'images_with_same_topic': images_with_same_topic})
 
 
 @login_required  # Đảm bảo người dùng đã đăng nhập để sử dụng tính năng này
