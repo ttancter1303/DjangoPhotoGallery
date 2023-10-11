@@ -1,0 +1,246 @@
+Index: E:/pythonProject1/.idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"d634baa6-50b5-4b85-ac43-d966d43eaa2d\" name=\"Changes\" comment=\"\">\r\n      <change afterPath=\"E:/pythonProject1/PhotoShareDjango/static/js/hide.js\" afterDir=\"false\" />\r\n      <change afterPath=\"E:/pythonProject1/PhotoShareDjango/static/js/popup.js\" afterDir=\"false\" />\r\n      <change beforePath=\"E:/pythonProject1/.idea/.name\" beforeDir=\"false\" />\r\n      <change beforePath=\"E:/pythonProject1/.idea/aws.xml\" beforeDir=\"false\" />\r\n      <change beforePath=\"E:/pythonProject1/.idea/codeStyles/Project.xml\" beforeDir=\"false\" />\r\n      <change beforePath=\"E:/pythonProject1/.idea/codeStyles/codeStyleConfig.xml\" beforeDir=\"false\" />\r\n      <change beforePath=\"E:/pythonProject1/.idea/dbnavigator.xml\" beforeDir=\"false\" />\r\n      <change beforePath=\"E:/pythonProject1/.idea/inspectionProfiles/Project_Default.xml\" beforeDir=\"false\" afterPath=\"E:/pythonProject1/.idea/inspectionProfiles/Project_Default.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"E:/pythonProject1/.idea/inspectionProfiles/profiles_settings.xml\" beforeDir=\"false\" afterPath=\"E:/pythonProject1/.idea/inspectionProfiles/profiles_settings.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"E:/pythonProject1/.idea/misc.xml\" beforeDir=\"false\" afterPath=\"E:/pythonProject1/.idea/misc.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"E:/pythonProject1/.idea/pythonProject1.iml\" beforeDir=\"false\" afterPath=\"E:/pythonProject1/.idea/pythonProject1.iml\" afterDir=\"false\" />\r\n      <change beforePath=\"E:/pythonProject1/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"E:/pythonProject1/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"E:/pythonProject1/PhotoShareDjango/db.sqlite3\" beforeDir=\"false\" afterPath=\"E:/pythonProject1/PhotoShareDjango/db.sqlite3\" afterDir=\"false\" />\r\n      <change beforePath=\"E:/pythonProject1/PhotoShareDjango/photoshare/urls.py\" beforeDir=\"false\" afterPath=\"E:/pythonProject1/PhotoShareDjango/photoshare/urls.py\" afterDir=\"false\" />\r\n      <change beforePath=\"E:/pythonProject1/PhotoShareDjango/photoshare/views.py\" beforeDir=\"false\" afterPath=\"E:/pythonProject1/PhotoShareDjango/photoshare/views.py\" afterDir=\"false\" />\r\n      <change beforePath=\"E:/pythonProject1/PhotoShareDjango/static/css/style.css\" beforeDir=\"false\" afterPath=\"E:/pythonProject1/PhotoShareDjango/static/css/style.css\" afterDir=\"false\" />\r\n      <change beforePath=\"E:/pythonProject1/PhotoShareDjango/templates/base.html\" beforeDir=\"false\" afterPath=\"E:/pythonProject1/PhotoShareDjango/templates/base.html\" afterDir=\"false\" />\r\n      <change beforePath=\"E:/pythonProject1/PhotoShareDjango/templates/home.html\" beforeDir=\"false\" afterPath=\"E:/pythonProject1/PhotoShareDjango/templates/home.html\" afterDir=\"false\" />\r\n      <change beforePath=\"E:/pythonProject1/PhotoShareDjango/templates/profile.html\" beforeDir=\"false\" afterPath=\"E:/pythonProject1/PhotoShareDjango/templates/profile.html\" afterDir=\"false\" />\r\n      <change beforePath=\"E:/pythonProject1/PhotoShareDjango/templates/upload_image.html\" beforeDir=\"false\" afterPath=\"E:/pythonProject1/PhotoShareDjango/templates/upload_image.html\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"HTML File\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"E:/pythonProject1\" />\r\n  </component>\r\n  <component name=\"MarkdownSettingsMigration\">\r\n    <option name=\"stateVersion\" value=\"1\" />\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"2WUKrOzAdzJFA6ynRtLk4vJyOUq\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\"><![CDATA[{\r\n  \"keyToString\": {\r\n    \"DefaultHtmlFileTemplate\": \"HTML File\",\r\n    \"RunOnceActivity.ShowReadmeOnStart\": \"true\",\r\n    \"git-widget-placeholder\": \"main\"\r\n  }\r\n}]]></component>\r\n  <component name=\"RunManager\">\r\n    <configuration name=\"main\" type=\"PythonConfigurationType\" factoryName=\"Python\" nameIsGenerated=\"true\">\r\n      <module name=\"pythonProject1\" />\r\n      <option name=\"INTERPRETER_OPTIONS\" value=\"\" />\r\n      <option name=\"PARENT_ENVS\" value=\"true\" />\r\n      <envs>\r\n        <env name=\"PYTHONUNBUFFERED\" value=\"1\" />\r\n      </envs>\r\n      <option name=\"SDK_HOME\" value=\"\" />\r\n      <option name=\"WORKING_DIRECTORY\" value=\"E:/pythonProject1\" />\r\n      <option name=\"IS_MODULE_SDK\" value=\"true\" />\r\n      <option name=\"ADD_CONTENT_ROOTS\" value=\"true\" />\r\n      <option name=\"ADD_SOURCE_ROOTS\" value=\"true\" />\r\n      <option name=\"SCRIPT_NAME\" value=\"E:/pythonProject1/main.py\" />\r\n      <option name=\"PARAMETERS\" value=\"\" />\r\n      <option name=\"SHOW_COMMAND_LINE\" value=\"false\" />\r\n      <option name=\"EMULATE_TERMINAL\" value=\"false\" />\r\n      <option name=\"MODULE_MODE\" value=\"false\" />\r\n      <option name=\"REDIRECT_INPUT\" value=\"false\" />\r\n      <option name=\"INPUT_FILE\" value=\"\" />\r\n      <method v=\"2\" />\r\n    </configuration>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"d634baa6-50b5-4b85-ac43-d966d43eaa2d\" name=\"Changes\" comment=\"\" />\r\n      <created>1696781916355</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1696781916355</updated>\r\n    </task>\r\n    <servers />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/E:/pythonProject1/.idea/workspace.xml b/E:/pythonProject1/.idea/workspace.xml
+--- a/E:/pythonProject1/.idea/workspace.xml	
++++ b/E:/pythonProject1/.idea/workspace.xml	
+@@ -4,27 +4,10 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="d634baa6-50b5-4b85-ac43-d966d43eaa2d" name="Changes" comment="">
+-      <change afterPath="E:/pythonProject1/PhotoShareDjango/static/js/hide.js" afterDir="false" />
+-      <change afterPath="E:/pythonProject1/PhotoShareDjango/static/js/popup.js" afterDir="false" />
+-      <change beforePath="E:/pythonProject1/.idea/.name" beforeDir="false" />
+-      <change beforePath="E:/pythonProject1/.idea/aws.xml" beforeDir="false" />
+-      <change beforePath="E:/pythonProject1/.idea/codeStyles/Project.xml" beforeDir="false" />
+-      <change beforePath="E:/pythonProject1/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" />
+-      <change beforePath="E:/pythonProject1/.idea/dbnavigator.xml" beforeDir="false" />
+-      <change beforePath="E:/pythonProject1/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="E:/pythonProject1/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+-      <change beforePath="E:/pythonProject1/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" afterPath="E:/pythonProject1/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+-      <change beforePath="E:/pythonProject1/.idea/misc.xml" beforeDir="false" afterPath="E:/pythonProject1/.idea/misc.xml" afterDir="false" />
+-      <change beforePath="E:/pythonProject1/.idea/pythonProject1.iml" beforeDir="false" afterPath="E:/pythonProject1/.idea/pythonProject1.iml" afterDir="false" />
++    <list default="true" id="d634baa6-50b5-4b85-ac43-d966d43eaa2d" name="Changes" comment="Ttan : fixing row">
+       <change beforePath="E:/pythonProject1/.idea/workspace.xml" beforeDir="false" afterPath="E:/pythonProject1/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="E:/pythonProject1/PhotoShareDjango/db.sqlite3" beforeDir="false" afterPath="E:/pythonProject1/PhotoShareDjango/db.sqlite3" afterDir="false" />
+-      <change beforePath="E:/pythonProject1/PhotoShareDjango/photoshare/urls.py" beforeDir="false" afterPath="E:/pythonProject1/PhotoShareDjango/photoshare/urls.py" afterDir="false" />
+-      <change beforePath="E:/pythonProject1/PhotoShareDjango/photoshare/views.py" beforeDir="false" afterPath="E:/pythonProject1/PhotoShareDjango/photoshare/views.py" afterDir="false" />
+-      <change beforePath="E:/pythonProject1/PhotoShareDjango/static/css/style.css" beforeDir="false" afterPath="E:/pythonProject1/PhotoShareDjango/static/css/style.css" afterDir="false" />
+       <change beforePath="E:/pythonProject1/PhotoShareDjango/templates/base.html" beforeDir="false" afterPath="E:/pythonProject1/PhotoShareDjango/templates/base.html" afterDir="false" />
+       <change beforePath="E:/pythonProject1/PhotoShareDjango/templates/home.html" beforeDir="false" afterPath="E:/pythonProject1/PhotoShareDjango/templates/home.html" afterDir="false" />
+-      <change beforePath="E:/pythonProject1/PhotoShareDjango/templates/profile.html" beforeDir="false" afterPath="E:/pythonProject1/PhotoShareDjango/templates/profile.html" afterDir="false" />
+-      <change beforePath="E:/pythonProject1/PhotoShareDjango/templates/upload_image.html" beforeDir="false" afterPath="E:/pythonProject1/PhotoShareDjango/templates/upload_image.html" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -49,13 +32,13 @@
+     <option name="hideEmptyMiddlePackages" value="true" />
+     <option name="showLibraryContents" value="true" />
+   </component>
+-  <component name="PropertiesComponent"><![CDATA[{
+-  "keyToString": {
+-    "DefaultHtmlFileTemplate": "HTML File",
+-    "RunOnceActivity.ShowReadmeOnStart": "true",
+-    "git-widget-placeholder": "main"
++  <component name="PropertiesComponent">{
++  &quot;keyToString&quot;: {
++    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
++    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
++    &quot;git-widget-placeholder&quot;: &quot;main&quot;
+   }
+-}]]></component>
++}</component>
+   <component name="RunManager">
+     <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+       <module name="pythonProject1" />
+@@ -88,6 +71,18 @@
+       <option name="presentableId" value="Default" />
+       <updated>1696781916355</updated>
+     </task>
++    <task id="LOCAL-00001" summary="Ttan : fixing row">
++      <created>1696838446641</created>
++      <option name="number" value="00001" />
++      <option name="presentableId" value="LOCAL-00001" />
++      <option name="project" value="LOCAL" />
++      <updated>1696838446641</updated>
++    </task>
++    <option name="localTasksCounter" value="2" />
+     <servers />
+   </component>
++  <component name="VcsManagerConfiguration">
++    <MESSAGE value="Ttan : fixing row" />
++    <option name="LAST_COMMIT_MESSAGE" value="Ttan : fixing row" />
++  </component>
+ </project>
+\ No newline at end of file
+Index: E:/pythonProject1/PhotoShareDjango/templates/base.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>{% load static %}\r\n<!DOCTYPE html>\r\n<html>\r\n  <head>\r\n    <meta charset=\"utf-8\">\r\n    <title>{% block title %} --- {% endblock %}</title>\r\n    <link href=\"https://fonts.googleapis.com/css?family=Peralta\" rel=\"stylesheet\">\r\n    <link rel=\"stylesheet\" href=\"{% static 'css/bootstrap.min.css' %}\">\r\n    <link rel=\"stylesheet\" href=\"{% static 'css/gallery.css' %}\">\r\n    <link rel=\"stylesheet\" href=\"{% static 'css/style.css' %}\">\r\n    <link href=\"https://fonts.googleapis.com/icon?family=Material+Icons\" rel=\"stylesheet\">\r\n    <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css\">\r\n\r\n\r\n    {% block stylesheet %}\r\n    {% endblock %}  <!-- Thêm khối 'css' -->\r\n  </head>\r\n  <body>\r\n    {% block body %}\r\n    <!-- thanh tiêu đề -->\r\n    <nav class=\"navbar navbar-expand-lg navbar-dark bg-dark\">\r\n      <a class=\"navbar-brand\" href=\"{% url 'home' %}\">Titan</a>\r\n      <div class=\"container\" id=\"mainMenu\">\r\n        {% if user.is_authenticated %}\r\n        <ul class=\"navbar-nav ml-auto\">\r\n          <li>\r\n            <form class=\"form-inline my-2 my-lg-0\" method=\"get\" action=\"{% url 'search_images' %}\">\r\n                <input class=\"form-control mr-sm-2\" type=\"search\" name=\"search_query\" placeholder=\"Tìm kiếm\" aria-label=\"Search\">\r\n                <button class=\"btn btn-outline-success my-2 my-sm-0\" type=\"submit\">Tìm kiếm</button>\r\n            </form>\r\n          </li>\r\n          <li class=\"nav-item dropdown\">\r\n            <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"userMenu\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\r\n              {{ user.username }}\r\n            </a>\r\n            <div class=\"dropdown-menu dropdown-menu-right\" aria-labelledby=\"userMenu\">\r\n              <a class=\"dropdown-item\" href=\"{% url 'view_profile' %}\">Tài khoản</a>\r\n              <div class=\"dropdown-divider\"></div>\r\n              <a class=\"dropdown-item\" href=\"{% url 'logout' %}\">Đăng xuất</a>\r\n            </div>\r\n          </li>\r\n        </ul>\r\n        {% else %}\r\n        <form class=\"form-inline ml-auto\">\r\n          <a href=\"{% url 'login' %}\" class=\"btn btn-outline-secondary\">Đăng nhập</a>\r\n          <a href=\"{% url 'sign_up' %}\" class=\"btn btn-primary ml-2\">Đăng kí</a>\r\n        </form>\r\n        {% endif %}  \r\n      </div>\r\n    </nav> \r\n    <div class=\"box\">\r\n      {% block content %}\r\n      {% endblock %}\r\n    </div>\r\n\r\n    {% endblock body %}  <!-- Thêm khối 'body' -->\r\n\r\n    <!-- js -->\r\n    <script src=\"{% static 'js/jquery-3.2.1.min.js' %}\"></script>\r\n    <script src=\"{% static 'js/popper.min.js' %}\"></script>\r\n    <script src=\"{% static 'js/bootstrap.min.js' %}\"></script>\r\n  </body>\r\n</html>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/E:/pythonProject1/PhotoShareDjango/templates/base.html b/E:/pythonProject1/PhotoShareDjango/templates/base.html
+--- a/E:/pythonProject1/PhotoShareDjango/templates/base.html	
++++ b/E:/pythonProject1/PhotoShareDjango/templates/base.html	
+@@ -5,7 +5,7 @@
+     <meta charset="utf-8">
+     <title>{% block title %} --- {% endblock %}</title>
+     <link href="https://fonts.googleapis.com/css?family=Peralta" rel="stylesheet">
+-    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
++  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+     <link rel="stylesheet" href="{% static 'css/gallery.css' %}">
+     <link rel="stylesheet" href="{% static 'css/style.css' %}">
+     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+@@ -58,6 +58,7 @@
+     <!-- js -->
+     <script src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
+     <script src="{% static 'js/popper.min.js' %}"></script>
+-    <script src="{% static 'js/bootstrap.min.js' %}"></script>
++    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
++    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+   </body>
+ </html>
+\ No newline at end of file
+Index: E:/pythonProject1/PhotoShareDjango/templates/home.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>{% extends \"base.html\" %}\r\n{% block content %}\r\n  <div class=\"row\">\r\n    <div class=\"column\">\r\n      <div class=\"content\">\r\n        <img src=\"mountains.jpg\" alt=\"Mountains\" style=\"width:100%\">\r\n        <h3>My Work</h3>\r\n        <p>Lorem ipsum..</p>\r\n      </div>\r\n    </div>\r\n    <div class=\"column\">\r\n      <div class=\"content\">\r\n        <img src=\"lights.jpg\" alt=\"Lights\" style=\"width:100%\">\r\n        <h3>My Work</h3>\r\n        <p>Lorem ipsum..</p>\r\n      </div>\r\n    </div>\r\n    <div class=\"column\">\r\n      <div class=\"content\">\r\n        <img src=\"nature.jpg\" alt=\"Nature\" style=\"width:100%\">\r\n        <h3>My Work</h3>\r\n        <p>Lorem ipsum..</p>\r\n      </div>\r\n    </div>\r\n    <div class=\"column\">\r\n      <div class=\"content\">\r\n        <img src=\"mountains.jpg\" alt=\"Mountains\" style=\"width:100%\">\r\n        <h3>My Work</h3>\r\n        <p>Lorem ipsum..</p>\r\n      </div>\r\n    </div>\r\n  </div>\r\n  \r\n  <div class=\"floating-container\">\r\n    <div class=\"floating-button\">+</div>\r\n    <div class=\"element-container\">\r\n\r\n      <a href=\"{% url 'upload_image' %}\">\r\n        <span class=\"float-element tooltip-left\">\r\n          <i class=\"material-icons hover-i\">image</i>\r\n        </span>\r\n      </a>\r\n\r\n      <a href=\"{% url 'create_tag' %}\">\r\n        <span class=\"float-element\">\r\n          <i class=\"material-icons\">style</i>\r\n        </span>\r\n      </a>\r\n\r\n      <a href=\"{% url 'create_topics' %}\">\r\n        <span class=\"float-element\">\r\n          <i class=\"material-icons\">topic</i>\r\n        </span>\r\n      </a>\r\n    </div>\r\n  </div>\r\n  <div class=\"py-5 bg-light\">\r\n    <div class=\"box-item image-gallery\">\r\n      {% for image in images %}\r\n      <div class=\"image-item\">\r\n\r\n        <a href=\"{% url 'image_detail' image_id=image.id %}\">\r\n          <img src=\"{{ image.image.url }}\" alt=\"{{ image.caption }}\" />\r\n        </a>\r\n        <div>\r\n          <p>{{ image.caption }}</p>\r\n        </div>\r\n      </div>\r\n      {% endfor %}\r\n    </div>\r\n  </div>\r\n{% endblock %}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/E:/pythonProject1/PhotoShareDjango/templates/home.html b/E:/pythonProject1/PhotoShareDjango/templates/home.html
+--- a/E:/pythonProject1/PhotoShareDjango/templates/home.html	
++++ b/E:/pythonProject1/PhotoShareDjango/templates/home.html	
+@@ -1,72 +1,63 @@
+ {% extends "base.html" %}
+ {% block content %}
+-  <div class="row">
+-    <div class="column">
+-      <div class="content">
+-        <img src="mountains.jpg" alt="Mountains" style="width:100%">
+-        <h3>My Work</h3>
+-        <p>Lorem ipsum..</p>
+-      </div>
+-    </div>
+-    <div class="column">
+-      <div class="content">
+-        <img src="lights.jpg" alt="Lights" style="width:100%">
+-        <h3>My Work</h3>
+-        <p>Lorem ipsum..</p>
+-      </div>
++<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
++  <div class="carousel-inner">
++    <div class="carousel-item active">
++      <img src="..." class="d-block w-100" alt="...">
+     </div>
+-    <div class="column">
+-      <div class="content">
+-        <img src="nature.jpg" alt="Nature" style="width:100%">
+-        <h3>My Work</h3>
+-        <p>Lorem ipsum..</p>
+-      </div>
++    <div class="carousel-item">
++      <img src="..." class="d-block w-100" alt="...">
++    </div>
++    <div class="carousel-item">
++      <img src="..." class="d-block w-100" alt="...">
+     </div>
+-    <div class="column">
+-      <div class="content">
+-        <img src="mountains.jpg" alt="Mountains" style="width:100%">
+-        <h3>My Work</h3>
+-        <p>Lorem ipsum..</p>
+-      </div>
+-    </div>
+-  </div>
+-  
+-  <div class="floating-container">
+-    <div class="floating-button">+</div>
+-    <div class="element-container">
++  </div>
++  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
++    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
++    <span class="visually-hidden">Previous</span>
++  </button>
++  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
++    <span class="carousel-control-next-icon" aria-hidden="true"></span>
++    <span class="visually-hidden">Next</span>
++  </button>
++</div>
++
++<div class="floating-container">
++  <div class="floating-button">+</div>
++  <div class="element-container">
+ 
+-      <a href="{% url 'upload_image' %}">
+-        <span class="float-element tooltip-left">
+-          <i class="material-icons hover-i">image</i>
+-        </span>
+-      </a>
++    <a href="{% url 'upload_image' %}">
++      <span class="float-element tooltip-left">
++        <i class="material-icons hover-i">image</i>
++      </span>
++    </a>
+ 
+-      <a href="{% url 'create_tag' %}">
+-        <span class="float-element">
+-          <i class="material-icons">style</i>
+-        </span>
+-      </a>
++    <a href="{% url 'create_tag' %}">
++      <span class="float-element">
++        <i class="material-icons">style</i>
++      </span>
++    </a>
+ 
+-      <a href="{% url 'create_topics' %}">
+-        <span class="float-element">
+-          <i class="material-icons">topic</i>
+-        </span>
+-      </a>
+-    </div>
+-  </div>
+-  <div class="py-5 bg-light">
+-    <div class="box-item image-gallery">
+-      {% for image in images %}
+-      <div class="image-item">
++    <a href="{% url 'create_topics' %}">
++      <span class="float-element">
++        <i class="material-icons">topic</i>
++      </span>
++    </a>
++  </div>
++</div>
++<div class="py-5 bg-light">
++  <div class="box-item image-gallery">
++    {% for image in images %}
++    <div class="image-item">
+ 
+-        <a href="{% url 'image_detail' image_id=image.id %}">
+-          <img src="{{ image.image.url }}" alt="{{ image.caption }}" />
+-        </a>
+-        <div>
+-          <p>{{ image.caption }}</p>
+-        </div>
+-      </div>
+-      {% endfor %}
+-    </div>
+-  </div>
++      <a href="{% url 'image_detail' image_id=image.id %}">
++        <img src="{{ image.image.url }}" alt="{{ image.caption }}" />
++      </a>
++      <div>
++        <p>{{ image.caption }}</p>
++      </div>
++    </div>
++    {% endfor %}
++  </div>
++</div>
+ {% endblock %}
+\ No newline at end of file
