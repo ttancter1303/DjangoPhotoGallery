@@ -1,23 +1,64 @@
 {% extends "base.html" %}
 
 {% block content %}
+<style>
+  /* Định dạng giao diện form */
+  .image-upload-form {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+  }
+
+  /* Định dạng các fieldset trong form */
+  fieldset {
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+  }
+
+  /* Định dạng nút tải lên */
+  button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  button:hover {
+    background-color: #0056b3;
+  }
+   #id_caption {
+    width: 200px; /* Thay đổi kích thước theo ý muốn */
+    height: 30px; /* Thay đổi chiều cao theo ý muốn */
+  }
+</style>
 <h2>Tải lên hình ảnh</h2>
-<form id="upload-form" onsubmit="return hideForm();" method="post" enctype="multipart/form-data">
+<form class="image-upload-form" method="post" enctype="multipart/form-data">
   {% csrf_token %}
-  {{ form.as_p }}
-  <!--  <label for="{{ form.tags.id_for_label }}">Tags:</label>-->
-  <!--  {% for tag in form.tags %}-->
-  <!--  <div class="form-check">-->
-  <!--    {{ tag }}-->
-  <!--    <label class="form-check-label" for="{{ tag.id_for_label }}">{{ tag.choice_label }}</label>-->
-  <!--  </div>-->
-  <!--  {% endfor %}-->
-  <button type="submit" onclick="return hideForm();">Tải lên</button>
+  <fieldset>
+    {{ form.image.label_tag }}
+    {{ form.image }}
+  </fieldset>
+  <fieldset>
+    {{ form.caption.label_tag }}
+    {{ form.caption }}
+  </fieldset>
+  <fieldset>
+    {{ form.tags.label_tag }}
+    {{ form.tags }}
+  </fieldset>
+  <button type="submit">Tải lên</button>
 </form>
 
 <div id="progress-container" style="display: none;">
   <div id="progress-bar"></div>
-  <div id="progress-text">Đang tải lên: <span id="progress-percent">0%</span></div>
+  <div id="progress-text">Tải lên: <span id="progress-percent">0%</span></div>
 </div>
 
 <div id="uploaded-image" style="display: none;">
@@ -45,7 +86,7 @@
   });
   function hideForm() {
     document.getElementById("upload-form").style.display = "none";
-    
+
   }
   uploadForm.addEventListener('submit', function (e) {
     e.preventDefault();

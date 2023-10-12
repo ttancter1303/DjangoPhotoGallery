@@ -4,204 +4,171 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="535f5683-34fa-413f-80d6-f1ce67e581e7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/pythonProject2.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FoodPlaza-main/.github/workflows/django.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FoodPlaza-main/FoodProject/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FoodPlaza-main/FoodProject/settings.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FoodPlaza-main/FoodProject/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FoodPlaza-main/FoodProject/wsgi.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FoodPlaza-main/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FoodPlaza-main/Screenshots/foodplaza-admin-home-1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FoodPlaza-main/Screenshots/foodplaza-home-2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FoodPlaza-main/Screenshots/foodplaza-home-3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FoodPlaza-main/Screenshots/foodplaza-login.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FoodPlaza-main/Screenshots/foodplaza-user-home-0.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FoodPlaza-main/Screenshots/foodplaza-user-register-1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FoodPlaza-main/Screenshots/fp-cartlist-1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FoodPlaza-main/Screenshots/fp-cartlist.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FoodPlaza-main/Screenshots/fp-ss-admin-foodlist-1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FoodPlaza-main/Screenshots/fp-ss-admin-foodlist-2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FoodPlaza-main/Screenshots/fp-ss-user-foodlist.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FoodPlaza-main/Screenshots/order-history.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FoodPlaza-main/Templates/foodapp/Test History/Theme2 BootStrap/addcust.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FoodPlaza-main/Templates/foodapp/Test History/Theme2 BootStrap/addfood.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FoodPlaza-main/Templates/foodapp/Test History/Theme2 BootStrap/cartlist.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FoodPlaza-main/Templates/foodapp/Test History/Theme2 BootStrap/custlist.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FoodPlaza-main/Templates/foodapp/Test History/Theme2 BootStrap/fooddesc.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FoodPlaza-main/Templates/foodapp/Test History/Theme2 BootStrap/foodlist.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FoodPlaza-main/Templates/foodapp/Test History/Theme2 BootStrap/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FoodPlaza-main/Templates/foodapp/Test History/Theme2 BootStrap/login.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FoodPlaza-main/Templates/foodapp/Test History/Theme2 BootStrap/orderlist.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FoodPlaza-main/Templates/foodapp/Test History/Theme2 BootStrap/updatecust.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FoodPlaza-main/Templates/foodapp/Test History/Theme2 BootStrap/updatefood.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FoodPlaza-main/Templates/foodapp/addcust.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FoodPlaza-main/Templates/foodapp/addfood.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FoodPlaza-main/Templates/foodapp/cartlist.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FoodPlaza-main/Templates/foodapp/custlist.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FoodPlaza-main/Templates/foodapp/fooddesc.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FoodPlaza-main/Templates/foodapp/foodlist.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FoodPlaza-main/Templates/foodapp/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FoodPlaza-main/Templates/foodapp/login.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FoodPlaza-main/Templates/foodapp/master.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FoodPlaza-main/Templates/foodapp/orderlist.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FoodPlaza-main/Templates/foodapp/updatecust.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FoodPlaza-main/Templates/foodapp/updatefood.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FoodPlaza-main/db.sqlite3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FoodPlaza-main/foodapp/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FoodPlaza-main/foodapp/admin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FoodPlaza-main/foodapp/apps.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FoodPlaza-main/foodapp/forms.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FoodPlaza-main/foodapp/migrations/0001_initial.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FoodPlaza-main/foodapp/migrations/0002_cust.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FoodPlaza-main/foodapp/migrations/0003_auto_20190821_1358.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FoodPlaza-main/foodapp/migrations/0004_admin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FoodPlaza-main/foodapp/migrations/0005_cart.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FoodPlaza-main/foodapp/migrations/0006_order.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FoodPlaza-main/foodapp/migrations/0007_food_foodimage.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FoodPlaza-main/foodapp/migrations/0008_auto_20200218_1949.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FoodPlaza-main/foodapp/migrations/0009_food_address.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FoodPlaza-main/foodapp/migrations/0010_auto_20200305_1922.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FoodPlaza-main/foodapp/migrations/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FoodPlaza-main/foodapp/models.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FoodPlaza-main/foodapp/static/css/animate.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FoodPlaza-main/foodapp/static/css/bootstrap.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FoodPlaza-main/foodapp/static/css/font-awesome.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FoodPlaza-main/foodapp/static/css/imperial_style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FoodPlaza-main/foodapp/static/css/logstyle.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FoodPlaza-main/foodapp/static/css/magnific-popup.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FoodPlaza-main/foodapp/static/css/master.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FoodPlaza-main/foodapp/static/css/owl.carousel.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FoodPlaza-main/foodapp/static/css/owl.theme.default.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FoodPlaza-main/foodapp/static/css/style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FoodPlaza-main/foodapp/static/css/styleax.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FoodPlaza-main/foodapp/static/css/templatemo_style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FoodPlaza-main/foodapp/static/fonts/FontAwesome.otf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FoodPlaza-main/foodapp/static/fonts/fontawesome-webfont.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FoodPlaza-main/foodapp/static/fonts/fontawesome-webfont.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FoodPlaza-main/foodapp/static/fonts/fontawesome-webfont.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FoodPlaza-main/foodapp/static/fonts/fontawesome-webfont.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FoodPlaza-main/foodapp/static/fonts/fontawesome-webfont.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FoodPlaza-main/foodapp/static/images/12.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FoodPlaza-main/foodapp/static/images/LOGO-FOODPLAZAa1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FoodPlaza-main/foodapp/static/images/Tadka_Dal.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FoodPlaza-main/foodapp/static/images/about-image.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FoodPlaza-main/foodapp/static/images/bindi.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FoodPlaza-main/foodapp/static/images/bread.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FoodPlaza-main/foodapp/static/images/dosa.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FoodPlaza-main/foodapp/static/images/food1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FoodPlaza-main/foodapp/static/images/food_plaza_logo.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FoodPlaza-main/foodapp/static/images/foodformbck.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FoodPlaza-main/foodapp/static/images/foodformbckblur.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FoodPlaza-main/foodapp/static/images/footer-open-hour-bg.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FoodPlaza-main/foodapp/static/images/fries.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FoodPlaza-main/foodapp/static/images/images.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FoodPlaza-main/foodapp/static/images/index.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FoodPlaza-main/foodapp/static/images/inner-page-banner.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FoodPlaza-main/foodapp/static/images/jeera rice.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FoodPlaza-main/foodapp/static/images/login.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FoodPlaza-main/foodapp/static/images/logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FoodPlaza-main/foodapp/static/images/logo10.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FoodPlaza-main/foodapp/static/images/mainscreen1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FoodPlaza-main/foodapp/static/images/mainscreen2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FoodPlaza-main/foodapp/static/images/mainscreen3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FoodPlaza-main/foodapp/static/images/mainscreen4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FoodPlaza-main/foodapp/static/images/mainscreen5.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FoodPlaza-main/foodapp/static/images/menu-image2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FoodPlaza-main/foodapp/static/images/menu-image3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FoodPlaza-main/foodapp/static/images/menu-image4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FoodPlaza-main/foodapp/static/images/menu-image5.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FoodPlaza-main/foodapp/static/images/menu-image6.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FoodPlaza-main/foodapp/static/images/p.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FoodPlaza-main/foodapp/static/images/pasta.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FoodPlaza-main/foodapp/static/images/slider-image1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FoodPlaza-main/foodapp/static/images/slider-image2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FoodPlaza-main/foodapp/static/images/slider-image3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FoodPlaza-main/foodapp/static/images/slider1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FoodPlaza-main/foodapp/static/images/slider2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FoodPlaza-main/foodapp/static/images/slider3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FoodPlaza-main/foodapp/static/images/slider4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FoodPlaza-main/foodapp/static/images/templatemo_content_bg_bottom.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FoodPlaza-main/foodapp/static/images/templatemo_content_bg_middle.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FoodPlaza-main/foodapp/static/images/templatemo_content_bg_top.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FoodPlaza-main/foodapp/static/images/templatemo_content_top.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FoodPlaza-main/foodapp/static/images/templatemo_header.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FoodPlaza-main/foodapp/static/images/templatemo_header_bg.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FoodPlaza-main/foodapp/static/images/templatemo_image_01.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FoodPlaza-main/foodapp/static/images/templatemo_image_02.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FoodPlaza-main/foodapp/static/images/templatemo_image_03.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FoodPlaza-main/foodapp/static/images/templatemo_image_04.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FoodPlaza-main/foodapp/static/images/templatemo_image_05.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FoodPlaza-main/foodapp/static/images/templatemo_image_06.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FoodPlaza-main/foodapp/static/images/templatemo_main_bg.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FoodPlaza-main/foodapp/static/images/templatemo_menu_bg.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FoodPlaza-main/foodapp/static/images/templatemo_menu_hover_left.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FoodPlaza-main/foodapp/static/images/templatemo_menu_hover_right.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FoodPlaza-main/foodapp/static/images/testimonial-bg.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FoodPlaza-main/foodapp/static/images/white.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FoodPlaza-main/foodapp/static/js/bootstrap.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FoodPlaza-main/foodapp/static/js/custom.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FoodPlaza-main/foodapp/static/js/jquery.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FoodPlaza-main/foodapp/static/js/jquery.magnific-popup.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FoodPlaza-main/foodapp/static/js/jquery.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FoodPlaza-main/foodapp/static/js/jquery.stellar.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FoodPlaza-main/foodapp/static/js/jquery.validate.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FoodPlaza-main/foodapp/static/js/owl.carousel.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FoodPlaza-main/foodapp/static/js/smoothscroll.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FoodPlaza-main/foodapp/static/js/wow.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FoodPlaza-main/foodapp/tests.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FoodPlaza-main/foodapp/views.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FoodPlaza-main/manage.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FoodPlaza-main/media/media/140599214_3440171032778963_3589954037539976515_o.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FoodPlaza-main/media/media/650x350_fast_food_smarts_rmq.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FoodPlaza-main/media/media/fast-food.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FoodPlaza-main/media/media/french-fries-732x549-thumbnail.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FoodPlaza-main/media/media/heart-healthy-foods-family-803925748.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FoodPlaza-main/media/media/p.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FoodPlaza-main/media/media/p_CGFMffg.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FoodPlaza-main/media/media/pasta.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FoodPlaza-main/media/media/pasta_AzceKra.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FoodPlaza-main/media/media/pexels-anthony-leong-2092897.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FoodPlaza-main/media/media/pexels-photo-461198.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FoodPlaza-main/media/media/pizza-with-vegetables-on-a-wooden-table-316-small.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FoodPlaza-main/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dbnavigator.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/pythonProject1.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10_11_2023_10_26_PM_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10_11_2023_10_26_PM_[Changes]1/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10_11_2023_10_26_PM__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_16_51,_09_10_2023_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_16_51__09_10_2023__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="535f5683-34fa-413f-80d6-f1ce67e581e7" name="Changes" comment="Ttan: fix upload image">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PhotoShareDjango/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/PhotoShareDjango/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PhotoShareDjango/photoshare/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/PhotoShareDjango/photoshare/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodPlaza-main/.github/workflows/django.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodPlaza-main/FoodProject/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodPlaza-main/FoodProject/settings.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodPlaza-main/FoodProject/urls.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodPlaza-main/FoodProject/wsgi.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodPlaza-main/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodPlaza-main/Screenshots/foodplaza-admin-home-1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodPlaza-main/Screenshots/foodplaza-home-2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodPlaza-main/Screenshots/foodplaza-home-3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodPlaza-main/Screenshots/foodplaza-login.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodPlaza-main/Screenshots/foodplaza-user-home-0.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodPlaza-main/Screenshots/foodplaza-user-register-1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodPlaza-main/Screenshots/fp-cartlist-1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodPlaza-main/Screenshots/fp-cartlist.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodPlaza-main/Screenshots/fp-ss-admin-foodlist-1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodPlaza-main/Screenshots/fp-ss-admin-foodlist-2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodPlaza-main/Screenshots/fp-ss-user-foodlist.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodPlaza-main/Screenshots/order-history.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodPlaza-main/Templates/foodapp/Test History/Theme2 BootStrap/addcust.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodPlaza-main/Templates/foodapp/Test History/Theme2 BootStrap/addfood.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodPlaza-main/Templates/foodapp/Test History/Theme2 BootStrap/cartlist.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodPlaza-main/Templates/foodapp/Test History/Theme2 BootStrap/custlist.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodPlaza-main/Templates/foodapp/Test History/Theme2 BootStrap/fooddesc.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodPlaza-main/Templates/foodapp/Test History/Theme2 BootStrap/foodlist.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodPlaza-main/Templates/foodapp/Test History/Theme2 BootStrap/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodPlaza-main/Templates/foodapp/Test History/Theme2 BootStrap/login.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodPlaza-main/Templates/foodapp/Test History/Theme2 BootStrap/orderlist.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodPlaza-main/Templates/foodapp/Test History/Theme2 BootStrap/updatecust.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodPlaza-main/Templates/foodapp/Test History/Theme2 BootStrap/updatefood.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodPlaza-main/Templates/foodapp/addcust.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodPlaza-main/Templates/foodapp/addfood.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodPlaza-main/Templates/foodapp/cartlist.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodPlaza-main/Templates/foodapp/custlist.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodPlaza-main/Templates/foodapp/fooddesc.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodPlaza-main/Templates/foodapp/foodlist.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodPlaza-main/Templates/foodapp/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodPlaza-main/Templates/foodapp/login.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodPlaza-main/Templates/foodapp/master.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodPlaza-main/Templates/foodapp/orderlist.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodPlaza-main/Templates/foodapp/updatecust.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodPlaza-main/Templates/foodapp/updatefood.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodPlaza-main/db.sqlite3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodPlaza-main/foodapp/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodPlaza-main/foodapp/admin.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodPlaza-main/foodapp/apps.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodPlaza-main/foodapp/forms.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodPlaza-main/foodapp/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodPlaza-main/foodapp/migrations/0002_cust.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodPlaza-main/foodapp/migrations/0003_auto_20190821_1358.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodPlaza-main/foodapp/migrations/0004_admin.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodPlaza-main/foodapp/migrations/0005_cart.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodPlaza-main/foodapp/migrations/0006_order.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodPlaza-main/foodapp/migrations/0007_food_foodimage.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodPlaza-main/foodapp/migrations/0008_auto_20200218_1949.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodPlaza-main/foodapp/migrations/0009_food_address.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodPlaza-main/foodapp/migrations/0010_auto_20200305_1922.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodPlaza-main/foodapp/migrations/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodPlaza-main/foodapp/models.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodPlaza-main/foodapp/static/css/animate.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodPlaza-main/foodapp/static/css/bootstrap.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodPlaza-main/foodapp/static/css/font-awesome.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodPlaza-main/foodapp/static/css/imperial_style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodPlaza-main/foodapp/static/css/logstyle.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodPlaza-main/foodapp/static/css/magnific-popup.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodPlaza-main/foodapp/static/css/master.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodPlaza-main/foodapp/static/css/owl.carousel.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodPlaza-main/foodapp/static/css/owl.theme.default.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodPlaza-main/foodapp/static/css/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodPlaza-main/foodapp/static/css/styleax.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodPlaza-main/foodapp/static/css/templatemo_style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodPlaza-main/foodapp/static/fonts/FontAwesome.otf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodPlaza-main/foodapp/static/fonts/fontawesome-webfont.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodPlaza-main/foodapp/static/fonts/fontawesome-webfont.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodPlaza-main/foodapp/static/fonts/fontawesome-webfont.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodPlaza-main/foodapp/static/fonts/fontawesome-webfont.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodPlaza-main/foodapp/static/fonts/fontawesome-webfont.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodPlaza-main/foodapp/static/images/12.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodPlaza-main/foodapp/static/images/LOGO-FOODPLAZAa1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodPlaza-main/foodapp/static/images/Tadka_Dal.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodPlaza-main/foodapp/static/images/about-image.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodPlaza-main/foodapp/static/images/bindi.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodPlaza-main/foodapp/static/images/bread.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodPlaza-main/foodapp/static/images/dosa.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodPlaza-main/foodapp/static/images/food1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodPlaza-main/foodapp/static/images/food_plaza_logo.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodPlaza-main/foodapp/static/images/foodformbck.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodPlaza-main/foodapp/static/images/foodformbckblur.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodPlaza-main/foodapp/static/images/footer-open-hour-bg.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodPlaza-main/foodapp/static/images/fries.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodPlaza-main/foodapp/static/images/images.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodPlaza-main/foodapp/static/images/index.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodPlaza-main/foodapp/static/images/inner-page-banner.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodPlaza-main/foodapp/static/images/jeera rice.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodPlaza-main/foodapp/static/images/login.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodPlaza-main/foodapp/static/images/logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodPlaza-main/foodapp/static/images/logo10.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodPlaza-main/foodapp/static/images/mainscreen1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodPlaza-main/foodapp/static/images/mainscreen2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodPlaza-main/foodapp/static/images/mainscreen3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodPlaza-main/foodapp/static/images/mainscreen4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodPlaza-main/foodapp/static/images/mainscreen5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodPlaza-main/foodapp/static/images/menu-image2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodPlaza-main/foodapp/static/images/menu-image3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodPlaza-main/foodapp/static/images/menu-image4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodPlaza-main/foodapp/static/images/menu-image5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodPlaza-main/foodapp/static/images/menu-image6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodPlaza-main/foodapp/static/images/p.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodPlaza-main/foodapp/static/images/pasta.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodPlaza-main/foodapp/static/images/slider-image1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodPlaza-main/foodapp/static/images/slider-image2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodPlaza-main/foodapp/static/images/slider-image3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodPlaza-main/foodapp/static/images/slider1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodPlaza-main/foodapp/static/images/slider2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodPlaza-main/foodapp/static/images/slider3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodPlaza-main/foodapp/static/images/slider4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodPlaza-main/foodapp/static/images/templatemo_content_bg_bottom.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodPlaza-main/foodapp/static/images/templatemo_content_bg_middle.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodPlaza-main/foodapp/static/images/templatemo_content_bg_top.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodPlaza-main/foodapp/static/images/templatemo_content_top.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodPlaza-main/foodapp/static/images/templatemo_header.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodPlaza-main/foodapp/static/images/templatemo_header_bg.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodPlaza-main/foodapp/static/images/templatemo_image_01.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodPlaza-main/foodapp/static/images/templatemo_image_02.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodPlaza-main/foodapp/static/images/templatemo_image_03.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodPlaza-main/foodapp/static/images/templatemo_image_04.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodPlaza-main/foodapp/static/images/templatemo_image_05.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodPlaza-main/foodapp/static/images/templatemo_image_06.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodPlaza-main/foodapp/static/images/templatemo_main_bg.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodPlaza-main/foodapp/static/images/templatemo_menu_bg.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodPlaza-main/foodapp/static/images/templatemo_menu_hover_left.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodPlaza-main/foodapp/static/images/templatemo_menu_hover_right.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodPlaza-main/foodapp/static/images/testimonial-bg.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodPlaza-main/foodapp/static/images/white.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodPlaza-main/foodapp/static/js/bootstrap.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodPlaza-main/foodapp/static/js/custom.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodPlaza-main/foodapp/static/js/jquery.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodPlaza-main/foodapp/static/js/jquery.magnific-popup.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodPlaza-main/foodapp/static/js/jquery.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodPlaza-main/foodapp/static/js/jquery.stellar.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodPlaza-main/foodapp/static/js/jquery.validate.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodPlaza-main/foodapp/static/js/owl.carousel.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodPlaza-main/foodapp/static/js/smoothscroll.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodPlaza-main/foodapp/static/js/wow.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodPlaza-main/foodapp/tests.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodPlaza-main/foodapp/views.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodPlaza-main/manage.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodPlaza-main/media/media/140599214_3440171032778963_3589954037539976515_o.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodPlaza-main/media/media/650x350_fast_food_smarts_rmq.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodPlaza-main/media/media/fast-food.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodPlaza-main/media/media/french-fries-732x549-thumbnail.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodPlaza-main/media/media/heart-healthy-foods-family-803925748.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodPlaza-main/media/media/p.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodPlaza-main/media/media/p_CGFMffg.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodPlaza-main/media/media/pasta.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodPlaza-main/media/media/pasta_AzceKra.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodPlaza-main/media/media/pexels-anthony-leong-2092897.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodPlaza-main/media/media/pexels-photo-461198.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodPlaza-main/media/media/pizza-with-vegetables-on-a-wooden-table-316-small.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodPlaza-main/requirements.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/PhotoShareDjango/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/PhotoShareDjango/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PhotoShareDjango/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/PhotoShareDjango/templates/home.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PhotoShareDjango/templates/image_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/PhotoShareDjango/templates/image_detail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/photo_share_react_api/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/photo_share_react_api/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/photo_share_react_api/package-lock.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/photo_share_react_api/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/photo_share_react_api/public/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/photo_share_react_api/public/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/photo_share_react_api/public/logo192.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/photo_share_react_api/public/logo512.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/photo_share_react_api/public/manifest.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/photo_share_react_api/public/robots.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/photo_share_react_api/src/App.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/photo_share_react_api/src/App.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/photo_share_react_api/src/App.test.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/photo_share_react_api/src/PhotoGallery.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/photo_share_react_api/src/index.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/photo_share_react_api/src/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/photo_share_react_api/src/logo.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/photo_share_react_api/src/reportWebVitals.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/photo_share_react_api/src/setupTests.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PhotoShareDjango/templates/test.html" beforeDir="false" afterPath="$PROJECT_DIR$/PhotoShareDjango/templates/test.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PhotoShareDjango/templates/upload_image.html" beforeDir="false" afterPath="$PROJECT_DIR$/PhotoShareDjango/templates/upload_image.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -214,23 +181,23 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 2
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 2
+}</component>
   <component name="ProjectId" id="2We7onMzzEucxI8RPt43Ui1GPG8" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "/home/ttangutts/PycharmProjects/pythonProject2"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/ttangutts/PycharmProjects/pythonProject2&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
@@ -245,6 +212,19 @@
       <option name="presentableId" value="Default" />
       <updated>1697081368890</updated>
     </task>
+    <task id="LOCAL-00001" summary="Ttan: fix upload image">
+      <option name="closed" value="true" />
+      <created>1697089605943</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1697089605943</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Ttan: fix upload image" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ttan: fix upload image" />
   </component>
 </project>

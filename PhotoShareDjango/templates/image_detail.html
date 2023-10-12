@@ -24,11 +24,21 @@
 
 
   <h3>Hình ảnh có cùng tag</h3>
-  <div class="slideshow">
+
+
+  <div class="py-5 bg-light">
+    <div class="box-item image-gallery">
     {% for img in images_with_same_tag %}
-      <img src="{{ img.image.url }}" alt="{{ img.title }}">
-    {% endfor %}
+      <div class="image-item">
+      <img src="{{ img.image.url }}" alt="{{ img.caption }}">
+
+      </div>
+      {% endfor %}
+    </div>
   </div>
+
+
+
 
   <h3>Hình ảnh có cùng topic</h3>
   <div class="image-list">
