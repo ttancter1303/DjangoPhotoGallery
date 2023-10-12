@@ -1,7 +1,39 @@
 {% extends "base.html" %}
     {% block content %}
+    <style>
+      /* Định dạng giao diện form */
+      .tag-form {
+        max-width: 400px;
+        margin: 0 auto;
+        padding: 20px;
+        border: 1px solid #ccc;
+        background-color: #f9f9f9;
+        border-radius: 5px;
+      }
+
+      /* Định dạng trường 'name' */
+      #id_name {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+      }
+
+      /* Định dạng nút lưu */
+      button[type="submit"] {
+        background-color: #007bff;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      button[type="submit"]:hover {
+        background-color: #0056b3;
+      }
+    </style>
       <h2>Tạo mới tag</h2>
-      <form method="post">
+      <form class="tag-form"  method="post">
         {% csrf_token %}
         {{ form.as_p }}
         <a href="{% url 'tag_list' %}">Danh sách tag</a>

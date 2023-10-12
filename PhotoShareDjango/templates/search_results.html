@@ -1,36 +1,54 @@
 {% extends "base.html" %}
 {% block content %}
+<style>
+  .image-card {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .image-card .col-md-4 {
+    flex-basis: calc(25% - 10px); /* 20px là khoảng cách giữa các cột */
+    margin-bottom: 20px;
+  }
+   h1{
+    text-align:center;
+   }
+  .image-card .card {
+    width: 100%;
+  }
+</style>
     <h1>Kết quả tìm kiếm</h1>
-    <form method="get">
-        {{ form.as_p }}
-        <button type="submit">Tìm kiếm</button>
-    </form>
-    {% if images %}
-        <div class="row">
-            {% for image in images %}
-                <div class="col-md-4">
-                    <div class="card mb-4 shadow-sm">
-                        <img src="{{ image.image_file.url }}" alt="{{ image.title }}" class="img-fluid">
-                        <div class="card-body">
-                            <h5 class="card-title">{{ image.caption }}</h5>
-                            <img src="{{ image.image.url }}" alt="{{ image.caption }}" />
-                            <p class="card-text">Tags:
-                                {% for tag in image.tags.all %}
-                                    <span class="badge badge-primary">{{ tag.name }}</span>
-                                {% endfor %}
-                            </p>
-                            <p class="card-text">Topics:
-                                {% for topic in image.topics.all %}
-                                    <span class="badge badge-secondary">{{ topic.name }}</span>
-                                {% endfor %}
-                            </p>
-                        </div>
+<!--    <form method="get">-->
+<!--        {{ form.as_p }}-->
+<!--        <button type="submit">Tìm kiếm</button>-->
+<!--    </form>-->
+{% if images %}
+    <div class="image-card">
+        {% for image in images %}
+            <div class="col-md-4">
+                <div class="card mb-4 shadow-sm">
+                    <img src="{{ image.image_file.url }}" alt="{{ image.title }}" class="img-fluid">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ image.caption }}</h5>
+                        <img src="{{ image.image.url }}" alt="{{ image.caption }}" />
+                        <p class="card-text">Tags:
+                            {% for tag in image.tags.all %}
+                                <span class="badge badge-primary">{{ tag.name }}</span>
+                            {% endfor %}
+                        </p>
+                        <p class="card-text">Topics:
+                            {% for topic in image.topics.all %}
+                                <span class="badge badge-secondary">{{ topic.name }}</span>
+                            {% endfor %}
+                        </p>
                     </div>
                 </div>
-            {% endfor %}
-        </div>
-    {% else %}
-        <p>Không có kết quả tìm kiếm.</p>
-    {% endif %}
+            </div>
+        {% endfor %}
+    </div>
+{% else %}
+    <p>Không có kết quả tìm kiếm.</p>
+{% endif %}
 {% endblock %}
 

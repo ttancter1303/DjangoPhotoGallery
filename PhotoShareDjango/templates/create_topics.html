@@ -1,11 +1,51 @@
 {% extends "base.html" %}
 
 {% block content %}
+<style>
+  /* Định dạng giao diện form */
+  .topic-form {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+  }
+
+  /* Định dạng trường 'name' */
+  #id_name {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+
+  /* Định dạng trường 'description' */
+  #id_description {
+    width: 100%;
+    height: 100px;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+
+  /* Định dạng nút lưu */
+  button[type="submit"] {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  button[type="submit"]:hover {
+    background-color: #0056b3;
+  }
+  </style>
   <h2>Tạo Topic Mới</h2>
-  <form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Tạo Topic</button>
+  <form class="topic-form" method="post">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit">Lưu</button>
   </form>
 
   <h2>Danh sách các Topic</h2>
