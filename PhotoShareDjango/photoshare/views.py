@@ -148,16 +148,24 @@ def upload_image(request):
         form = ImageUploadForm(request.POST, request.FILES)
         if form.is_valid():
             image = form.save(commit=False)
-            image.user = request.user
+            image.user = request.user  # Gán người dùng hiện tại cho hình ảnh
             image.save()
-            request.user.userprofile.library.add(image)
-
-            return redirect('home')
+            image.tags.set(form.cleaned_data['tags'])
+            form.save_m2m()
+            request.user.userprofile.library.add(image)  # Thêm hình ảnh vào thư viện của người dùng
+            return redirect('home')  # Chuyển hướng người dùng sau khi tải lên thành công
     else:
         form = ImageUploadForm()
+
     return render(request, 'upload_image.html', {'form': form})
+def topic_detail(request, topic_id):
+    # Lấy thông tin chủ đề hoặc trả về 404 nếu không tìm thấy
+    topic = get_object_or_404(Topic, pk=topic_id)
 
+    # Lấy danh sách các ảnh thuộc chủ đề đó
+    images = Image.objects.filter(topics=topic)
 
+    return render(request, 'topic_detail.html', {'topic': topic, 'images': images})
 def image_detail(request, image_id):
     image = get_object_or_404(Image, pk=image_id)
     tags = image.tags.all()
@@ -165,15 +173,18 @@ def image_detail(request, image_id):
         topics = image.topics.all()
     except AttributeError:
         topics = []
-
+    tag_names = [tag.name for tag in tags]
     topic_names = [topic.name for topic in topics]
-    images_with_same_tag = Image.objects.filter(tags__in=tags).exclude(id=image_id)
-    images_with_same_topic = Image.objects.filter(topics__in=topics).exclude(id=image_id)
+    images_with_same_tag = Image.objects.filter(tags__name__in=tag_names).exclude(id=image_id)
+    images_with_same_topic = Image.objects.filter(topics__name__in=topic_names).exclude(id=image_id)
 
     return render(request, 'image_detail.html', {
         'image': image,
+        'tags': tags,
+        'topics': topics,
         'images_with_same_tag': images_with_same_tag,
-        'images_with_same_topic': images_with_same_topic})
+        'images_with_same_topic': images_with_same_topic
+    })
 
 
 @login_required  # Đảm bảo người dùng đã đăng nhập để sử dụng tính năng này

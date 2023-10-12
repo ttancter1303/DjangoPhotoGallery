@@ -1,0 +1,22 @@
+{% extends 'master.html' %}
+
+{% block title %}updatefood{% endblock %}
+
+{% block content %}
+<main>
+  <center><div class="middle-admin-reg">
+    <center ><legend style="margin-top:25px;box-shadow:0px 3px 5px;width:50%;background:white;border-radius:25px;font-family: 'Courgette', cursive;">Update Food<h5 style="font-size:50%;color:RED;padding-bottom:5px;letter-spacing:1px;"><b>ID : {{f.FoodId}}0</b></h5></legend></center>
+    <div class="form-container">
+      <form class="myform-container" enctype="multipart/form-data" action="/editfood/{{f.FoodId}}" method="post">{% csrf_token %}
+      <span class="entry-box">Food Name : <input type="text" name="FoodName" value="{{f.FoodName}}"></span>
+      <span class="entry-box">Food Category : <input type="text" name="FoodCat" value="{{f.FoodCat}}" required></span>
+      <span class="entry-box">Food Price : <input type="tel" name="FoodPrice" maxlength="6"  value="{{f.FoodPrice}}" required></span>
+      <span class="entry-box">Food image : <input type="file" class="valid" name="FoodImage" style="padding-left:0px" required/></span>
+      <center><br/><button type="reset"class="butn" style="margin-top:10px;background-image: linear-gradient(190deg, rgba(183,28,28 ,1), rgba(239,154,154 ,1));" name="button">Cancel</button>
+      &nbsp;&nbsp;<button type="submit"class="butn" style="margin-top:10px;"  name="button">Update</button>
+        </center>
+      </form>
+    </div>
+  </div></center>
+</main>
+{% endblock %}

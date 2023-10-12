@@ -1,0 +1,21 @@
+{% extends 'master.html' %}
+
+{% block title %}orderlist{% endblock %}
+
+{% block content %}
+<main style="margin-top:80px;">
+  <form action="placeorder" method="post">
+  {% csrf_token %}
+{% for o in orderlist %}
+  <div class="" style="background:#FFF;position: static;width:35%;height:150px;margin-left: 7.5%;float:left;box-shadow:1px 1px 5px;margin-bottom:10px;">
+    <span style="color:black;float:left;margin-left:10px;"><span style="font-size:14px;">Order ID: <b style="letter-spacing: 3px;color: grey;">{{o.OrderId}}</b></span><br /><b style="font-size:20px;"><i>{{o.OrderDate}}</i></b><br/>
+<br />
+<tr>
+<td><b>Bill:  </b></td><td>{{o.TotalBill}}</td><br /><td><b>Total:  </b></td><td id="tlp" style="color:black;"></td>
+</tr><a href="#">Invoice</a>
+  </span>
+  </div>
+  {% endfor %}
+</form>
+</main>
+{% endblock %}

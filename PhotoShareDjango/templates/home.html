@@ -1,38 +1,15 @@
 {% extends "base.html" %}
 {% block content %}
-  <div class="row" style="display: flex;">
+  <div style="display: flex;">
     {% for topic in topics %}
-    <div class="column" style="flex: 1;">
-      <div class="content" style="border: 1px solid #ccc;padding: 10px;">
+    <div style="flex: 1;">
+      <div style="border: 1px solid #ccc;padding: 10px;">
         <a href="{% url 'topic_detail' topic.id %}">
           {{ topic.name }}
         </a>
       </div>
     </div>
     {% endfor %}
-  </div>
-  <div class="floating-container">
-    <div class="floating-button">+</div>
-    <div class="element-container">
-
-      <a href="{% url 'upload_image' %}">
-        <span class="float-element tooltip-left">
-          <i class="material-icons hover-i">image</i>
-        </span>
-      </a>
-
-      <a href="{% url 'create_tag' %}">
-        <span class="float-element">
-          <i class="material-icons">style</i>
-        </span>
-      </a>
-
-      <a href="{% url 'create_topics' %}">
-        <span class="float-element">
-          <i class="material-icons">topic</i>
-        </span>
-      </a>
-    </div>
   </div>
   <div class="py-5 bg-light">
     <div class="box-item image-gallery">

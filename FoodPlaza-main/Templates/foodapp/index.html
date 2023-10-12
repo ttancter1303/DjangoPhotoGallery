@@ -1,0 +1,46 @@
+{% extends 'master.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<main>
+<div id="banner">
+  <div id="banner-text">
+      <h1>SIZZLE</h1>
+      <p>Find your delicious hot food!</p>
+      <form class="search-box">
+        <input class="search-txt" type="text" name="" placeholder="I would like to eat..." />
+        <button class="search-btn" type="button" name="button">Search Food</button>
+
+      </form>
+  </div>
+</div>
+<div id="section-2">
+  <p id="heading">Fresh Food</p>
+  <h3>Our Restaurant !</h3>
+  <p id="title">Radish contains a lot of fiber, pectin and mineral salts.</p>
+  <div id="items">
+      <div class="item">
+          <div class="icon"><i class="fa fa-camera"></i></div>
+          <h3>Fresh Vegetables</h3>
+          <p>Use for cooking several types of vegetable oil.</p>
+      </div>
+      <div class="item">
+          <div class="icon"><i class="fa-rocket fa"></i></div>
+          <h3>High Quality</h3>
+          <p>This is the best source of essential fatty acids for the body.</p>
+      </div>
+      <div class="item">
+          <div class="icon"><i class="fab fa-twitter"></i></div>
+          <h3>Sale</h3>
+          <p>It is very good, if in the kitchen there will always be several bottles with different oils.</p>
+      </div>
+      <div class="item">
+          <div class="icon"><i class="fab fa-weixin"></i></div>
+          <h3>Best Price</h3>
+          <p>Remember that unrefined oils are not suitable for heat treatment.</p>
+      </div>
+  </div>
+</div>
+</main>
+{% endblock %}
