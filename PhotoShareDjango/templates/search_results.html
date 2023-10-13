@@ -15,14 +15,11 @@
     text-align:center;
    }
   .image-card .card {
-    width: 100%;
+    width: 50%;
+    height: auto;
   }
 </style>
     <h1>Kết quả tìm kiếm</h1>
-<!--    <form method="get">-->
-<!--        {{ form.as_p }}-->
-<!--        <button type="submit">Tìm kiếm</button>-->
-<!--    </form>-->
 {% if images %}
     <div class="image-card">
         {% for image in images %}

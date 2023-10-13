@@ -1,7 +1,8 @@
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
 from django.contrib import messages
-from django.contrib.auth import login, authenticate, logout
-from .forms import LoginForm, RegisterForm
+from django.contrib.auth import login, authenticate, logout, update_session_auth_hash
+from .forms import LoginForm, RegisterForm, ChangePasswordForm
 from photoshare.models import UserProfile
 
 
@@ -55,3 +56,22 @@ def sign_up(request):
             return redirect('images')
         else:
             return render(request, 'register.html', {'form': form})
+
+@login_required
+def change_password(request):
+    if request.method == 'POST':
+        form = ChangePasswordForm(request.POST)
+        if form.is_valid():
+            old_password = form.cleaned_data['old_password']
+            new_password = form.cleaned_data['new_password']
+            user = request.user
+            if user.check_password(old_password):
+                user.set_password(new_password)
+                user.save()
+                update_session_auth_hash(request, user)  # Đảm bảo phiên đăng nhập còn hiệu lực
+                return redirect('view_profile')  # Chuyển hướng đến trang thông tin cá nhân
+            else:
+                form.add_error('old_password', 'Mật khẩu cũ không đúng')
+    else:
+        form = ChangePasswordForm()
+    return render(request, 'change_password.html', {'form': form})

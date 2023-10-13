@@ -1,29 +1,26 @@
 {% extends "base.html" %}
 {% block content %}
-  <h2>Thông tin cá nhân</h2>
   <div class="user-profile">
+    <h2>Thông tin cá nhân</h2>
     <div class="avatar">
       <img src="{{ user_profile.avatar.url }}" alt="{{ user_profile.user.username }}'s avatar">
     </div>
-    <button id="change-avatar-button">Thay đổi Avatar</button>
     <div id="avatar-popup" style="display: none;">
-      <form id="avatar-form" method="post" enctype="multipart/form-data">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Cập nhật Ảnh Đại diện</button>
-      </form>
     </div>
     <div class="user-details">
       <p>{{ user_profile.user.username }}</p>
       <p><strong>Email:</strong> {{ user_profile.user.email }}</p>
       <p>{{ user_profile.bio }}</p>
-<!--      <a href="{% url 'edit_user_profile' pk=user_profile.user.pk %}">Edit Profile</a>-->
+      <a href="{% url 'change_password' %}">change password</a>
       <p><strong>Thư viện hình ảnh:</strong></p>
       <ul>
         {% for image in user_profile.library.all %}
           <li>
-            <img src="{{ image.image.url }}" alt="{{ image.caption }}">
-            <a href="{% url 'remove_image_from_library' image.id %}">Remove</a>
+            <div class="image-saved">
+              <img src="{{ image.image.url }}" alt="{{ image.caption }}">
+              <a href="{% url 'remove_image_from_library' image.id %}">Remove</a>
+            </div>
+
           </li>
         {% endfor %}
       </ul>
