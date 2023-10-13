@@ -1,29 +1,78 @@
 {% extends "base.html" %}
 {% block content %}
-  <div class="user-profile">
-    <h2>Thông tin cá nhân</h2>
-    <div class="avatar">
-      <img src="{{ user_profile.avatar.url }}" alt="{{ user_profile.user.username }}'s avatar">
-    </div>
-    <div id="avatar-popup" style="display: none;">
-    </div>
-    <div class="user-details">
-      <p>{{ user_profile.user.username }}</p>
-      <p><strong>Email:</strong> {{ user_profile.user.email }}</p>
-      <p>{{ user_profile.bio }}</p>
-      <a href="{% url 'change_password' %}">change password</a>
-      <p><strong>Thư viện hình ảnh:</strong></p>
-      <ul>
-        {% for image in user_profile.library.all %}
-          <li>
-            <div class="image-saved">
-              <img src="{{ image.image.url }}" alt="{{ image.caption }}">
-              <a href="{% url 'remove_image_from_library' image.id %}">Remove</a>
-            </div>
+<style>
+  .image-list {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
 
-          </li>
-        {% endfor %}
-      </ul>
-    </div>
+  .image-list li {
+    width: calc(33.33% - 10px);
+    /* 3 cột và 10px là khoảng cách giữa cột */
+    margin-right: 10px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+
+  }
+
+  .image-saved {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    border-radius: 20px
+  }
+
+  .image-content img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 20px
+  }
+
+.image-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+</style>
+<div class="user-profile">
+  <h2>Thông tin cá nhân</h2>
+  <div class="avatar">
+    <img src="{{ user_profile.avatar.url }}" alt="{{ user_profile.user.username }}'s avatar">
   </div>
+  <div id="avatar-popup" style="display: none;">
+  </div>
+  <div class="user-details">
+    <p>{{ user_profile.user.username }}</p>
+    <p><strong>Email:</strong> {{ user_profile.user.email }}</p>
+    <p>{{ user_profile.bio }}</p>
+    <a href="{% url 'change_password' %}">change password</a>
+    <p><strong>Thư viện hình ảnh:</strong></p>
+    <ul class="image-list">
+        <div class="py-5 bg-light">
+            <div class="box-item image-gallery">
+                {% for image in user_profile.library.all %}
+                    <div class="image-item">
+                        <a href="{% url 'image_detail' image_id=image.id %}">
+                            <div class="image-content">
+                                <img src="{{ image.image.url }}" alt="{{ image.caption }}">
+                            </div>
+                            <div class="image-actions">
+                              <a href="{% url 'remove_image_from_library' image.id %}">Remove</a>
+                            </div>
+                        </a>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </ul>
+
+  </div>
+</div>
 {% endblock %}

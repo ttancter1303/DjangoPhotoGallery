@@ -1,34 +1,17 @@
 {% extends "base.html" %}
 {% block content %}
-<style>
-  .image-card {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-  }
-
-  .image-card .col-md-4 {
-    flex-basis: calc(25% - 10px); /* 20px là khoảng cách giữa các cột */
-    margin-bottom: 20px;
-  }
-   h1{
-    text-align:center;
-   }
-  .image-card .card {
-    width: 50%;
-    height: auto;
-  }
-</style>
     <h1>Kết quả tìm kiếm</h1>
-{% if images %}
-    <div class="image-card">
+    <div class="row">
+    {% if images %}
         {% for image in images %}
-            <div class="col-md-4">
+            <div class="col-md-3">
                 <div class="card mb-4 shadow-sm">
                     <img src="{{ image.image_file.url }}" alt="{{ image.title }}" class="img-fluid">
                     <div class="card-body">
                         <h5 class="card-title">{{ image.caption }}</h5>
-                        <img src="{{ image.image.url }}" alt="{{ image.caption }}" />
+                        <a href="{% url 'image_detail' image_id=image.id %}">
+                          <img src="{{ image.image.url }}" alt="{{ image.caption }}">
+                        </a>
                         <p class="card-text">Tags:
                             {% for tag in image.tags.all %}
                                 <span class="badge badge-primary">{{ tag.name }}</span>
@@ -44,8 +27,7 @@
             </div>
         {% endfor %}
     </div>
-{% else %}
-    <p>Không có kết quả tìm kiếm.</p>
-{% endif %}
+    {% else %}
+        <p>Không có kết quả tìm kiếm.</p>
+    {% endif %}
 {% endblock %}
-

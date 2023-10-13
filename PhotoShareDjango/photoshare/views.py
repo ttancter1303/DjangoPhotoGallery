@@ -235,13 +235,17 @@ def view_profile(request):
         user_profile = UserProfile.objects.get(user=request.user)
     except UserProfile.DoesNotExist:
         user_profile = UserProfile.objects.create(user=request.user)
+
     if request.method == 'POST':
         image_id = request.POST.get('image_id')
         image_to_add = Image.objects.get(pk=image_id)
         user_profile.library.add(image_to_add)
-        return HttpResponse(status=200)  # Trả về một HTTP response cho client
+        return HttpResponse(status=200)
 
-    return render(request, 'profile.html', {'user_profile': user_profile})
+    # Sắp xếp danh sách ảnh từ mới đến cũ
+    images = user_profile.library.all().order_by('-upload_date')
+
+    return render(request, 'profile.html', {'user_profile': user_profile, 'images': images})
 class UpdateProfile(UpdateView):
     model = UserProfile
     fields = ['avatar']
@@ -253,7 +257,7 @@ class UpdateProfile(UpdateView):
         return JsonResponse(response_data)
 def search_images(request):
     form = SearchForm(request.GET)
-    images = Image.objects.all()
+    images = Image.objects.order_by('-upload_date')
 
     if form.is_valid():
         search_query = form.cleaned_data['search_query']

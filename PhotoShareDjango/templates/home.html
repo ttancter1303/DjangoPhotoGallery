@@ -2,14 +2,21 @@
 {% block content %}
   <div style="display: flex;">
     {% for topic in topics %}
-    <div style="flex: 1;">
-      <div style="border: 1px solid #ccc;padding: 10px;">
-        <a href="{% url 'topic_detail' topic.id %}">
+    <a href="{% url 'topic_detail' topic.id %}" style="text-decoration: none; color: inherit;">
+      <div style="flex: 1;">
+        <div style="border: 1px solid #ccc; padding: 10px; margin-right: 10px; border-radius: 20px;">
           {{ topic.name }}
-        </a>
+        </div>
       </div>
-    </div>
+    </a>
     {% endfor %}
+      <a href="{%  url 'create_topics' %}" style="text-decoration: none; color: inherit;">
+        <div style="flex: 1;">
+          <div style="border: 1px solid #ccc; padding: 10px; margin-right: 10px; border-radius: 20px;">
+            +
+          </div>
+        </div>
+      </a>
   </div>
   <div class="py-5 bg-light">
     <div class="box-item image-gallery">

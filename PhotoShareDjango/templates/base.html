@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <title>{% block title %} Photo Gallery {% endblock %}</title>
     <link href="https://fonts.googleapis.com/css?family=Peralta" rel="stylesheet">
-    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="{% static 'css/gallery.css' %}">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -46,7 +46,7 @@
         {% endif %}
       </div>
     </nav>
-    <div class="box">
+    <div class="box" style="background-color: white;">
       {% block content %}
       {% endblock %}
     </div>
