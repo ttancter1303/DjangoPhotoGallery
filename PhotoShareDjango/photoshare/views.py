@@ -15,7 +15,7 @@ from django.contrib.auth.models import User
 from rest_framework.generics import CreateAPIView
 from django.urls import reverse_lazy
 
-from .forms import ImageUploadForm, TagForm, SearchForm, TopicForm
+from .forms import ImageUploadForm, TagForm, SearchForm, TopicForm, AvatarUploadForm
 
 from .models import Image, UserProfile, Topic, Tag
 from .serializers import ImageSerializer, UserSerializer, TopicSerializer,UserProfileSerializer,TagSerializer
@@ -255,6 +255,22 @@ class UpdateProfile(UpdateView):
     def form_valid(self, form):
         response_data = {"avatar_url": form.instance.avatar.url}
         return JsonResponse(response_data)
+
+@login_required
+def change_avatar(request):
+    user_profile = request.user.userprofile
+
+    if request.method == 'POST':
+        form = AvatarUploadForm(request.POST, request.FILES)
+        if form.is_valid():
+            user_profile.avatar = form.cleaned_data['avatar']
+            user_profile.save()
+            return redirect('view_profile')  # Điều hướng về trang thông tin cá nhân
+
+    else:
+        form = AvatarUploadForm()
+
+    return render(request, 'change_avatar.html', {'form': form})
 def search_images(request):
     form = SearchForm(request.GET)
     images = Image.objects.order_by('-upload_date')

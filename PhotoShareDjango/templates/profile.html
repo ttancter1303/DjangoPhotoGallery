@@ -8,6 +8,85 @@
     padding: 0;
     margin: 0;
   }
+<<<<<<< HEAD
+
+  .image-list li {
+    width: calc(33.33% - 10px);
+    /* 3 cột và 10px là khoảng cách giữa cột */
+    margin-right: 10px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+
+  }
+
+  .image-saved {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    border-radius: 20px
+  }
+
+  .image-content img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 20px
+  }
+
+.image-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.avatar{
+    width:30%;
+    height:auto;
+}
+.profile-content {
+    border: 2px solid #000; /* Add your desired border color */
+    padding: 20px; /* Optional padding for spacing */
+    width:300px;
+}
+
+</style>
+<div class="user-profile">
+  <h2>Thông tin cá nhân</h2>
+  <div class="user-details">
+        <div class="profile-content">
+            <div class="avatar">
+                <img style="width: 200px;" src="{{ user_profile.avatar.url }}" alt="{{ user_profile.user.username }}'s avatar">
+            </div>
+            <a href="{% url 'change_avatar' %}">change avatar</a>
+            <p>{{ user_profile.user.username }}</p>
+            <p><strong>Email:</strong> {{ user_profile.user.email }}</p>
+            <p>{{ user_profile.bio }}</p>
+            <a href="{% url 'change_password' %}">change password</a>
+        </div>
+    <p><strong>Thư viện hình ảnh:</strong></p>
+    <ul class="image-list">
+        <div class="py-5 bg-light">
+            <div class="box-item image-gallery">
+                {% for image in user_profile.library.all %}
+                    <div class="image-item">
+                        <a href="{% url 'image_detail' image_id=image.id %}">
+                            <div class="image-content">
+                                <img src="{{ image.image.url }}" alt="{{ image.caption }}">
+                            </div>
+                            <div class="image-actions">
+                              <a href="{% url 'remove_image_from_library' image.id %}">Remove</a>
+                            </div>
+                        </a>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </ul>
+
+  </div>
+=======
 
   .image-list li {
     width: calc(33.33% - 10px);
@@ -74,5 +153,6 @@
     </ul>
 
   </div>
+>>>>>>> origin/main
 </div>
 {% endblock %}

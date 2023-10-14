@@ -3,7 +3,6 @@ from django.contrib.auth.models import User
 from os.path import join as path_join
 
 def user_avatar_path(instance, filename):
-    # Tạo tên tệp hình ảnh dựa trên ID của người dùng
     return path_join('avatars', f'{instance.user.id}', filename)
 
 class Topic(models.Model):
@@ -34,3 +33,7 @@ class UserProfile(models.Model):
                                      null=True)  # Sử dụng ManyToManyField có thể null
     def __str__(self):
         return self.user.username
+    def save(self, *args, **kwargs):
+        if not self.avatar:
+            self.avatar = 'avatars/default-avatar.png'
+        super().save(*args, **kwargs)
