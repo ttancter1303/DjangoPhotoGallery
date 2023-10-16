@@ -15,7 +15,7 @@ from django.contrib.auth.models import User
 from rest_framework.generics import CreateAPIView
 from django.urls import reverse_lazy
 
-from .forms import ImageUploadForm, TagForm, SearchForm, TopicForm, AvatarUploadForm
+from .forms import ImageUploadForm, TagForm, SearchForm, TopicForm
 
 from .models import Image, UserProfile, Topic, Tag
 from .serializers import ImageSerializer, UserSerializer, TopicSerializer,UserProfileSerializer,TagSerializer
@@ -244,8 +244,11 @@ def view_profile(request):
 
     # Sắp xếp danh sách ảnh từ mới đến cũ
     images = user_profile.library.all().order_by('-upload_date')
+    username = user_profile.user.username
+    user = User.objects.get(username=username)
+    image_upload = Image.objects.filter(user=user)
 
-    return render(request, 'profile.html', {'user_profile': user_profile, 'images': images})
+    return render(request, 'profile.html', {'user_profile': user_profile, 'images': images,'images_upload':image_upload})
 class UpdateProfile(UpdateView):
     model = UserProfile
     fields = ['avatar']
@@ -255,22 +258,6 @@ class UpdateProfile(UpdateView):
     def form_valid(self, form):
         response_data = {"avatar_url": form.instance.avatar.url}
         return JsonResponse(response_data)
-
-@login_required
-def change_avatar(request):
-    user_profile = request.user.userprofile
-
-    if request.method == 'POST':
-        form = AvatarUploadForm(request.POST, request.FILES)
-        if form.is_valid():
-            user_profile.avatar = form.cleaned_data['avatar']
-            user_profile.save()
-            return redirect('view_profile')  # Điều hướng về trang thông tin cá nhân
-
-    else:
-        form = AvatarUploadForm()
-
-    return render(request, 'change_avatar.html', {'form': form})
 def search_images(request):
     form = SearchForm(request.GET)
     images = Image.objects.order_by('-upload_date')

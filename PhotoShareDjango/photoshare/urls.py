@@ -36,7 +36,6 @@ urlpatterns = [
     path('profile/', views.view_profile, name='view_profile'),
     path('profile/edit_profile/<int:pk>/', EditUserProfile.as_view(), name='edit_user_profile'),
     path('save_image_to_library/<int:image_id>/', views.save_image_to_library, name='save_image_to_library'),
-    path('profile/change_avatar/', views.change_avatar, name='change_avatar'),
 
 ]
 if settings.DEBUG:

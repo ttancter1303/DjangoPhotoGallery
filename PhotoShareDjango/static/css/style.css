@@ -21,24 +21,16 @@
   justify-content: center;
   align-items: center;
 }
+
 .button {
   margin-right: 10px;
   /* Khoảng cách giữa các nút */
-<<<<<<< HEAD
-}
-
-.user-profile {
-  margin-left: 20px;
-}
-
-=======
 }
 
 .user-profile {
   margin-left: 50px;
 }
 
->>>>>>> origin/main
 .card img {
   max-width: 100%;
   height: auto;
