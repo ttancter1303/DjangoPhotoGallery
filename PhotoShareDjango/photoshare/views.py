@@ -246,7 +246,7 @@ def view_profile(request):
     images = user_profile.library.all().order_by('-upload_date')
     username = user_profile.user.username
     user = User.objects.get(username=username)
-    image_upload = Image.objects.filter(user=user)
+    image_upload = Image.objects.filter(user=user).order_by('-upload_date')
 
     return render(request, 'profile.html', {'user_profile': user_profile, 'images': images,'images_upload':image_upload})
 class UpdateProfile(UpdateView):

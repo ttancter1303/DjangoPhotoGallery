@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <div class="profile-update-form">
+    <h2>Cập nhật hồ sơ</h2>
+    <form method="post" enctype="multipart/form-data">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit">Lưu</button>
+    </form>
+  </div>
+{% endblock %}

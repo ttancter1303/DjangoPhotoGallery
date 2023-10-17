@@ -11,7 +11,6 @@
 
   .image-list li {
     width: calc(33.33% - 10px);
-    /* 3 cột và 10px là khoảng cách giữa cột */
     margin-right: 10px;
     margin-bottom: 10px;
     box-sizing: border-box;
@@ -35,50 +34,65 @@
     border-radius: 20px
   }
 
-.image-actions {
+  .image-actions {
     display: flex;
     flex-direction: column;
     align-items: center;
-}
+  }
 </style>
 <div class="user-profile">
   <h2>Thông tin cá nhân</h2>
   <div class="avatar">
     <img src="{{ user_profile.avatar.url }}" alt="{{ user_profile.user.username }}'s avatar">
   </div>
+  <a href="{% url 'update_profile' %}"update profile></a>
   <div id="avatar-popup" style="display: none;">
   </div>
   <div class="user-details">
     <p>{{ user_profile.user.username }}</p>
     <p><strong>Email:</strong> {{ user_profile.user.email }}</p>
-    <p>{{ user_profile.bio }}</p>
+<!--    <p>{{ user_profile.bio }}</p>-->
     <a href="{% url 'change_password' %}">change password</a>
-    <p><strong>Thư viện hình ảnh:</strong></p>
+    <h2><strong>Thư viện hình ảnh:</strong></strong></h2>
     <ul class="image-list">
-        <div class="py-5 bg-light">
-            <div class="box-item image-gallery">
-                {% for image in user_profile.library.all %}
-                    <div class="image-item">
-                        <a href="{% url 'image_detail' image_id=image.id %}">
-                            <div class="image-content">
-                                <img src="{{ image.image.url }}" alt="{{ image.caption }}">
-                            </div>
-                            <div class="image-actions">
-                              <a href="{% url 'remove_image_from_library' image.id %}">Remove</a>
-                            </div>
-                        </a>
-                    </div>
-                {% endfor %}
-                <h2>ảnh đã upload</h2>
-            </div>
+      <div class="py-5 bg-light">
+        <div class="box-item image-gallery">
+          {% for image in user_profile.library.all %}
+          <div class="image-item">
+            <a href="{% url 'image_detail' image_id=image.id %}">
+              <div class="image-content">
+                <img src="{{ image.image.url }}" alt="{{ image.caption }}">
+              </div>
+              <div class="image-actions">
+                <a href="{% url 'remove_image_from_library' image.id %}">Remove</a>
+              </div>
+            </a>
+          </div>
+          {% endfor %}
         </div>
+      </div>
     </ul>
+
+
+    <h2>ảnh đã upload</h2>
+
+    <ul class="image-list">
+      <div class="py-5 bg-light">
+        <div class="box-item image-gallery">
+          {% for image in images_upload %}
+          <div class="image-item">
+            <a href="{% url 'image_detail' image_id=image.id %}">
+              <div class="image-content">
+                <img src="{{ image.image.url }}" alt="{{ image.caption }}">
+              </div>
+            </a>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </ul>
+
+
   </div>
-        {% for image in images_upload %}
-      <li>
-        <img src="{{ image.image.url }}" alt="{{ image.caption }}">
-        <p>{{ image.caption }}</p>
-      </li>
-    {% endfor %}
 </div>
 {% endblock %}
