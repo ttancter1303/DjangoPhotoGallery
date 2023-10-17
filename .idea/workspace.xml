@@ -4,46 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-<<<<<<< HEAD
-    <list default="true" id="535f5683-34fa-413f-80d6-f1ce67e581e7" name="Changes" comment="Ttan: upgrade search bar">
-      <change afterPath="$PROJECT_DIR$/PhotoShareDjango/templates/change_avatar.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PhotoShareDjango/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/PhotoShareDjango/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PhotoShareDjango/photoshare/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/PhotoShareDjango/photoshare/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PhotoShareDjango/photoshare/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/PhotoShareDjango/photoshare/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PhotoShareDjango/photoshare/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/PhotoShareDjango/photoshare/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PhotoShareDjango/photoshare/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/PhotoShareDjango/photoshare/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PhotoShareDjango/static/css/gallery.css" beforeDir="false" afterPath="$PROJECT_DIR$/PhotoShareDjango/static/css/gallery.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PhotoShareDjango/static/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/PhotoShareDjango/static/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PhotoShareDjango/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/PhotoShareDjango/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PhotoShareDjango/templates/change_password.html" beforeDir="false" afterPath="$PROJECT_DIR$/PhotoShareDjango/templates/change_password.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PhotoShareDjango/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/PhotoShareDjango/templates/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PhotoShareDjango/templates/image_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/PhotoShareDjango/templates/image_detail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PhotoShareDjango/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/PhotoShareDjango/templates/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PhotoShareDjango/templates/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/PhotoShareDjango/templates/profile.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PhotoShareDjango/templates/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/PhotoShareDjango/templates/register.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PhotoShareDjango/templates/search_results.html" beforeDir="false" afterPath="$PROJECT_DIR$/PhotoShareDjango/templates/search_results.html" afterDir="false" />
-=======
-    <list default="true" id="c7e00893-1b39-4dd6-9d81-ef58cab93b40" name="Changes" comment="">
-      <change beforePath="E:/pythonProject/.idea/.gitignore" beforeDir="false" afterPath="E:/pythonProject/.idea/.gitignore" afterDir="false" />
+    <list default="true" id="c7e00893-1b39-4dd6-9d81-ef58cab93b40" name="Changes" comment="ttan: add uploaded_image in userprofile">
       <change beforePath="E:/pythonProject/.idea/dbnavigator.xml" beforeDir="false" />
       <change beforePath="E:/pythonProject/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="E:/pythonProject/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="E:/pythonProject/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" afterPath="E:/pythonProject/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change beforePath="E:/pythonProject/.idea/misc.xml" beforeDir="false" afterPath="E:/pythonProject/.idea/misc.xml" afterDir="false" />
-      <change beforePath="E:/pythonProject/.idea/modules.xml" beforeDir="false" afterPath="E:/pythonProject/.idea/modules.xml" afterDir="false" />
-      <change beforePath="E:/pythonProject/.idea/pythonProject2.iml" beforeDir="false" />
-      <change beforePath="E:/pythonProject/.idea/vcs.xml" beforeDir="false" afterPath="E:/pythonProject/.idea/vcs.xml" afterDir="false" />
       <change beforePath="E:/pythonProject/.idea/workspace.xml" beforeDir="false" afterPath="E:/pythonProject/.idea/workspace.xml" afterDir="false" />
       <change beforePath="E:/pythonProject/PhotoShareDjango/db.sqlite3" beforeDir="false" afterPath="E:/pythonProject/PhotoShareDjango/db.sqlite3" afterDir="false" />
-      <change beforePath="E:/pythonProject/PhotoShareDjango/photoshare/views.py" beforeDir="false" afterPath="E:/pythonProject/PhotoShareDjango/photoshare/views.py" afterDir="false" />
-      <change beforePath="E:/pythonProject/PhotoShareDjango/static/css/gallery.css" beforeDir="false" afterPath="E:/pythonProject/PhotoShareDjango/static/css/gallery.css" afterDir="false" />
-      <change beforePath="E:/pythonProject/PhotoShareDjango/static/css/style.css" beforeDir="false" afterPath="E:/pythonProject/PhotoShareDjango/static/css/style.css" afterDir="false" />
-      <change beforePath="E:/pythonProject/PhotoShareDjango/templates/base.html" beforeDir="false" afterPath="E:/pythonProject/PhotoShareDjango/templates/base.html" afterDir="false" />
-      <change beforePath="E:/pythonProject/PhotoShareDjango/templates/home.html" beforeDir="false" afterPath="E:/pythonProject/PhotoShareDjango/templates/home.html" afterDir="false" />
-      <change beforePath="E:/pythonProject/PhotoShareDjango/templates/image_detail.html" beforeDir="false" afterPath="E:/pythonProject/PhotoShareDjango/templates/image_detail.html" afterDir="false" />
-      <change beforePath="E:/pythonProject/PhotoShareDjango/templates/profile.html" beforeDir="false" afterPath="E:/pythonProject/PhotoShareDjango/templates/profile.html" afterDir="false" />
-      <change beforePath="E:/pythonProject/PhotoShareDjango/templates/search_results.html" beforeDir="false" afterPath="E:/pythonProject/PhotoShareDjango/templates/search_results.html" afterDir="false" />
->>>>>>> origin/main
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,28 +25,21 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="E:/pythonProject" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="ProjectId" id="2WhVKVh3C1dFLITTFlDCydwoAJ1" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
-<<<<<<< HEAD
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "/home/ttangutts/PycharmProjects/pythonProject2"
-=======
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "E:/pythonProject/PhotoShareDjango/templates"
->>>>>>> origin/main
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;E:/pythonProject/PhotoShareDjango/templates&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="E:\pythonProject\PhotoShareDjango\templates" />
@@ -118,40 +77,21 @@
       <option name="presentableId" value="Default" />
       <updated>1697184734321</updated>
     </task>
-<<<<<<< HEAD
-    <task id="LOCAL-00001" summary="Ttan: fix upload image">
-      <option name="closed" value="true" />
-      <created>1697089605943</created>
+    <task id="LOCAL-00001" summary="ttan: sửa giao diện">
+      <created>1697218542003</created>
       <option name="number" value="00001" />
       <option name="presentableId" value="LOCAL-00001" />
       <option name="project" value="LOCAL" />
-      <updated>1697089605943</updated>
+      <updated>1697218542003</updated>
     </task>
-    <task id="LOCAL-00002" summary="Ttan: fix upload image(2)">
-      <option name="closed" value="true" />
-      <created>1697096195152</created>
+    <task id="LOCAL-00002" summary="ttan: add uploaded_image in userprofile">
+      <created>1697470847231</created>
       <option name="number" value="00002" />
       <option name="presentableId" value="LOCAL-00002" />
       <option name="project" value="LOCAL" />
-      <updated>1697096195152</updated>
+      <updated>1697470847231</updated>
     </task>
-    <task id="LOCAL-00003" summary="Ttan: delete trash">
-      <option name="closed" value="true" />
-      <created>1697096264660</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1697096264660</updated>
-    </task>
-    <task id="LOCAL-00004" summary="Ttan: upgrade search bar">
-      <option name="closed" value="true" />
-      <created>1697098183485</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1697098183485</updated>
-    </task>
-    <option name="localTasksCounter" value="5" />
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -166,14 +106,8 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Ttan: fix upload image" />
-    <MESSAGE value="Ttan: fix upload image(2)" />
-    <MESSAGE value="Ttan: delete trash" />
-    <MESSAGE value="Ttan: upgrade search bar" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ttan: upgrade search bar" />
+    <MESSAGE value="ttan: sửa giao diện" />
+    <MESSAGE value="ttan: add uploaded_image in userprofile" />
+    <option name="LAST_COMMIT_MESSAGE" value="ttan: add uploaded_image in userprofile" />
   </component>
-=======
-    <servers />
-  </component>
->>>>>>> origin/main
 </project>
