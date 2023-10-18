@@ -1,4 +1,5 @@
 import os
+from typing import Any
 
 from django.conf import settings
 from django.contrib.auth.decorators import login_required
@@ -7,8 +8,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.utils.decorators import method_decorator
 from django.views import View
 from django.views.decorators.csrf import csrf_exempt
-from django.views.generic import UpdateView
-
+from django.views.generic import UpdateView, ListView
 
 from rest_framework import viewsets, permissions
 from django.contrib.auth.models import User
@@ -39,19 +39,19 @@ def home(req):
     return render(req, 'home.html', context)
 
 
-class HomeView(View):
-    template_name = 'home.html'
-    def get(self, request):
-        # Lấy danh sách tất cả hình ảnh và chủ đề
-        images = Image.objects.all()
-        topics = Topic.objects.all()
+class HomeView(ListView):
+    model = Image  # Model bạn muốn hiển thị
+    template_name = 'home.html'  # Template bạn muốn sử dụng
+    context_object_name = 'images'  # Tên biến context cho danh sách dữ liệu
+    ordering = ['-upload_date']  # Sắp xếp theo ngày tải lên (mặc định)
 
-        context = {
-            'images': images,
-            'topics': topics,
-        }
+    # Số lượng hình ảnh trên mỗi trang
+    paginate_by = 20
 
-        return render(request, 'home.html', context)
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['topics'] = Topic.objects.all()
+        return context
 class UserProfileView(View):
     def get(self, request, username):
         user_profile = UserProfile.objects.get(user__username=username)
