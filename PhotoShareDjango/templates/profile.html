@@ -39,13 +39,16 @@
     flex-direction: column;
     align-items: center;
   }
+  .avatar{
+
+  }
 </style>
 <div class="user-profile">
   <h2>Thông tin cá nhân</h2>
   <div class="avatar">
     <img src="{{ user_profile.avatar.url }}" alt="{{ user_profile.user.username }}'s avatar">
   </div>
-  <a href="{% url 'update_profile' %}"update profile></a>
+  <a href="{% url 'update_profile' pk=user_profile.pk %}">update profile</a>
   <div id="avatar-popup" style="display: none;">
   </div>
   <div class="user-details">

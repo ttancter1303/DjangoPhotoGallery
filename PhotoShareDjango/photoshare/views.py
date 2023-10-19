@@ -3,7 +3,7 @@ from typing import Any
 
 from django.conf import settings
 from django.contrib.auth.decorators import login_required
-from django.http import HttpResponse, JsonResponse, FileResponse
+from django.http import HttpResponse, JsonResponse, FileResponse, HttpResponseRedirect
 from django.shortcuts import render, redirect, get_object_or_404
 from django.utils.decorators import method_decorator
 from django.views import View
@@ -13,7 +13,7 @@ from django.views.generic import UpdateView, ListView
 from rest_framework import viewsets, permissions
 from django.contrib.auth.models import User
 from rest_framework.generics import CreateAPIView
-from django.urls import reverse_lazy
+from django.urls import reverse_lazy, reverse
 
 from .forms import ImageUploadForm, TagForm, SearchForm, TopicForm
 
@@ -256,8 +256,8 @@ class UpdateProfile(UpdateView):
     success_url = reverse_lazy('view_profile')
 
     def form_valid(self, form):
-        response_data = {"avatar_url": form.instance.avatar.url}
-        return JsonResponse(response_data)
+        super(UpdateProfile, self).form_valid(form)
+        return HttpResponseRedirect(self.request.META.get('HTTP_REFERER', reverse('view_profile')))
 def search_images(request):
     form = SearchForm(request.GET)
     images = Image.objects.order_by('-upload_date')

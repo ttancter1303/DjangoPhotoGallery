@@ -3,7 +3,8 @@ from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.contrib.auth import login, authenticate, logout, update_session_auth_hash
 from .forms import LoginForm, RegisterForm, ChangePasswordForm
-from photoshare.models import UserProfile
+from photoshare.models import UserProfile,Image
+
 
 
 def sign_in(request):
@@ -49,13 +50,17 @@ def sign_up(request):
             user.save()
 
             # Tạo UserProfile cho người dùng mới đăng ký
-            UserProfile.objects.create(user=user, library='default')
+            user_profile = UserProfile.objects.create(user=user)
+
+            default_image = Image.objects.get(name='default')  # Thay bằng truy vấn thích hợp
+            user_profile.library.add(default_image)
 
             messages.success(request, 'You have signed up successfully.')
             login(request, user)
             return redirect('images')
         else:
             return render(request, 'register.html', {'form': form})
+
 
 @login_required
 def change_password(request):
