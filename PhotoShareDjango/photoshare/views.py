@@ -289,21 +289,19 @@ def remove_image_from_library(request, image_id):
     user_profile = get_object_or_404(UserProfile, user=request.user)
     image = get_object_or_404(Image, id=image_id)
 
-    # Kiểm tra xem ảnh có thuộc thư viện của người dùng không
     if image in user_profile.library.all():
         user_profile.library.remove(image)
         user_profile.save()
         return redirect('view_profile')
+
     else:
-        # Xử lý trường hợp ảnh không tồn tại trong thư viện
-        # Hoặc đã bị xóa trước đó
         return redirect('view_profile')
 def topic_detail(request, topic_id):
-    # Lấy thông tin chủ đề hoặc trả về 404 nếu không tìm thấy
     topic = get_object_or_404(Topic, pk=topic_id)
-
-    # Lấy danh sách các ảnh thuộc chủ đề đó
     images = Image.objects.filter(topics=topic)
+    if not images:
+        return render(request, 'topic_detail.html',
+                      {'message': 'Không có hình ảnh nào trong topic này.', 'topic': topic, 'images': []})
 
     return render(request, 'topic_detail.html', {'topic': topic, 'images': images})
 

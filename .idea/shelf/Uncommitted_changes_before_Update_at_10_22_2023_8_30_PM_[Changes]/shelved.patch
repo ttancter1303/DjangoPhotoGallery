@@ -1,0 +1,135 @@
+Index: E:/pythonProject/PhotoShareDjango/photoshare/views.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import os\r\nfrom typing import Any\r\n\r\nfrom django.conf import settings\r\nfrom django.contrib.auth.decorators import login_required\r\nfrom django.http import HttpResponse, JsonResponse, FileResponse\r\nfrom django.shortcuts import render, redirect, get_object_or_404\r\nfrom django.utils.decorators import method_decorator\r\nfrom django.views import View\r\nfrom django.views.decorators.csrf import csrf_exempt\r\nfrom django.views.generic import UpdateView, ListView\r\n\r\nfrom rest_framework import viewsets, permissions\r\nfrom django.contrib.auth.models import User\r\nfrom rest_framework.generics import CreateAPIView\r\nfrom django.urls import reverse_lazy\r\n\r\nfrom .forms import ImageUploadForm, TagForm, SearchForm, TopicForm\r\n\r\nfrom .models import Image, UserProfile, Topic, Tag\r\nfrom .serializers import ImageSerializer, UserSerializer, TopicSerializer,UserProfileSerializer,TagSerializer\r\n\r\n#\r\n# class HomeView(View):\r\n#     model = ChuDe\r\n#     context_object_name = 'ccd'\r\n#     template_name = 'cac_chu_de.html'\r\n#     paginate_by = 10\r\n#     def get(self, request):\r\n#         images = Image.objects.all()\r\n#         return render(request, 'home.html', {'images': images})\r\ndef home(req):\r\n    images = Image.objects.order_by('-upload_date')\r\n    topics = Topic.objects.all()\r\n    context = {\r\n        'images': images,\r\n        'topics': topics,\r\n    }\r\n    return render(req, 'home.html', context)\r\n\r\n\r\nclass HomeView(ListView):\r\n    model = Image  # Model bạn muốn hiển thị\r\n    template_name = 'home.html'  # Template bạn muốn sử dụng\r\n    context_object_name = 'images'  # Tên biến context cho danh sách dữ liệu\r\n    ordering = ['-upload_date']  # Sắp xếp theo ngày tải lên (mặc định)\r\n\r\n    # Số lượng hình ảnh trên mỗi trang\r\n    paginate_by = 20\r\n\r\n    def get_context_data(self, **kwargs):\r\n        context = super().get_context_data(**kwargs)\r\n        context['topics'] = Topic.objects.all()\r\n        return context\r\nclass UserProfileView(View):\r\n    def get(self, request, username):\r\n        user_profile = UserProfile.objects.get(user__username=username)\r\n        images = Image.objects.filter(user=user_profile.user)\r\n        return render(request, 'user_profile.html', {'user_profile': user_profile, 'images': images})\r\n\r\nclass ViewImageView(View):\r\n    def get(self, request, image_id):\r\n        image = Image.objects.get(pk=image_id)\r\n        return render(request, 'view_image.html', {'image': image})\r\n\r\n#     Class Viewset\r\nclass UserViewSet(viewsets.ReadOnlyModelViewSet):\r\n    queryset = User.objects.all()\r\n    serializer_class = UserSerializer\r\n    permission_classes = [permissions.IsAuthenticated]\r\n\r\nclass ImageViewSet(viewsets.ModelViewSet):\r\n    queryset = Image.objects.all()\r\n    serializer_class = ImageSerializer\r\n\r\nclass TopicViewSet(viewsets.ModelViewSet):\r\n    queryset = Topic.objects.all()\r\n    serializer_class = TopicSerializer\r\n\r\nclass UserProfileViewSet(viewsets.ModelViewSet):\r\n    queryset = UserProfile.objects.all()\r\n    serializer_class = UserProfileSerializer\r\n    permission_classes = [permissions.IsAuthenticated]\r\n\r\nclass TagViewSet(viewsets.ModelViewSet):\r\n    queryset = Tag.objects.all()\r\n    serializer_class = TagSerializer\r\nclass ImageUploadView(CreateAPIView):\r\n    queryset = Image.objects.all()\r\n    serializer_class = ImageSerializer\r\nclass ViewImageView(View):\r\n    def get(self, request, image_id):\r\n        image = Image.objects.get(pk=image_id)\r\n        return render(request, 'view_image.html', {'image': image})\r\n\r\n# def upload_image(request):\r\n#     if request.method == 'POST':\r\n#         form = ImageUploadForm(request.POST, request.FILES)\r\n#         if form.is_valid():\r\n#             form.save()\r\n#             return redirect('success_page')  # Chuyển hướng đến trang thành công sau khi tải lên\r\n#     else:\r\n#         form = ImageUploadForm()\r\n#     return render(request, 'upload_image.html', {'form': form})\r\n# @login_required\r\n# @csrf_exempt\r\n# def upload_image(request):\r\n#     if request.method == 'POST' and request.FILES:\r\n#         uploaded_file = request.FILES['file']\r\n#         user = request.user\r\n#\r\n#         # Đảm bảo thư mục lưu trữ tồn tại\r\n#         storage_dir = os.path.join(settings.MEDIA_ROOT, 'uploads', str(user.id))\r\n#         os.makedirs(storage_dir, exist_ok=True)\r\n#\r\n#         # Lưu tệp vào thư mục lưu trữ\r\n#         file_path = os.path.join(storage_dir, uploaded_file.name)\r\n#         with open(file_path, 'wb+') as destination:\r\n#             for chunk in uploaded_file.chunks():\r\n#                 destination.write(chunk)\r\n#\r\n#         # Trả về một JSON response cho client\r\n#         response_data = {'message': 'Hình ảnh đã được tải lên thành công.'}\r\n#         return JsonResponse(response_data)\r\n#     else:\r\n#         return JsonResponse({'error': 'Yêu cầu không hợp lệ.'})\r\n# @login_required\r\n# def upload_image(request):\r\n#     if request.method == 'POST':\r\n#         form = ImageUploadForm(request.POST, request.FILES)\r\n#         if form.is_valid():\r\n#             # Gán người dùng hiện tại cho hình ảnh trước khi lưu vào cơ sở dữ liệu\r\n#             image = form.save(commit=False)\r\n#             image.user = request.user\r\n#             image.save()\r\n#             request.user.userprofile.library.add(image)\r\n#             image_url = image.image.url\r\n#\r\n#             # Trả về đường dẫn ảnh bằng JsonResponse\r\n#             response_data = {'image_url': image_url}\r\n#             return JsonResponse(response_data)\r\n#     else:\r\n#         form = ImageUploadForm()\r\n#     return render(request, 'upload_image.html', {'form': form})\r\n@login_required\r\ndef upload_image(request):\r\n    if request.method == 'POST':\r\n        form = ImageUploadForm(request.POST, request.FILES)\r\n        if form.is_valid():\r\n            image = form.save(commit=False)\r\n            image.user = request.user  # Gán người dùng hiện tại cho hình ảnh\r\n            image.save()\r\n            image.tags.set(form.cleaned_data['tags'])\r\n            form.save_m2m()\r\n            request.user.userprofile.library.add(image)  # Thêm hình ảnh vào thư viện của người dùng\r\n            return redirect('home')  # Chuyển hướng người dùng sau khi tải lên thành công\r\n    else:\r\n        form = ImageUploadForm()\r\n\r\n    return render(request, 'upload_image.html', {'form': form})\r\ndef topic_detail(request, topic_id):\r\n    # Lấy thông tin chủ đề hoặc trả về 404 nếu không tìm thấy\r\n    topic = get_object_or_404(Topic, pk=topic_id)\r\n\r\n    # Lấy danh sách các ảnh thuộc chủ đề đó\r\n    images = Image.objects.filter(topics=topic)\r\n\r\n    return render(request, 'topic_detail.html', {'topic': topic, 'images': images})\r\ndef image_detail(request, image_id):\r\n    image = get_object_or_404(Image, pk=image_id)\r\n    tags = image.tags.all()\r\n    try:\r\n        topics = image.topics.all()\r\n    except AttributeError:\r\n        topics = []\r\n    tag_names = [tag.name for tag in tags]\r\n    topic_names = [topic.name for topic in topics]\r\n    images_with_same_tag = Image.objects.filter(tags__name__in=tag_names).exclude(id=image_id)\r\n    images_with_same_topic = Image.objects.filter(topics__name__in=topic_names).exclude(id=image_id)\r\n\r\n    return render(request, 'image_detail.html', {\r\n        'image': image,\r\n        'tags': tags,\r\n        'topics': topics,\r\n        'images_with_same_tag': images_with_same_tag,\r\n        'images_with_same_topic': images_with_same_topic\r\n    })\r\n\r\n\r\n@login_required  # Đảm bảo người dùng đã đăng nhập để sử dụng tính năng này\r\ndef save_image_to_library(request, image_id):\r\n    # Lấy đối tượng ảnh từ cơ sở dữ liệu\r\n    image = get_object_or_404(Image, pk=image_id)\r\n\r\n    # Kiểm tra nếu ảnh đã tồn tại trong thư viện của người dùng thì không thêm nữa\r\n    if not request.user.userprofile.library.filter(pk=image_id).exists():\r\n        # Thêm ảnh vào thư viện của người dùng\r\n        request.user.userprofile.library.add(image)\r\n\r\n    return redirect('image_detail', image_id=image_id)\r\ndef create_tag(request):\r\n    if request.method == 'POST':\r\n        form = TagForm(request.POST)\r\n        if form.is_valid():\r\n            form.save()\r\n            return redirect('tag_list')\r\n    else:\r\n        form = TagForm()\r\n    return render(request, 'create_tag.html', {'form': form})\r\ndef success_page(request):\r\n    return render(request, 'success_page.html')\r\ndef tag_list(request):\r\n    tags = Tag.objects.all()\r\n    return render(request, 'tag_list.html', {'tags': tags})\r\ndef create_topics(request):\r\n    topics = Topic.objects.all()  # Lấy danh sách các topic hiện có\r\n    if request.method == 'POST':\r\n        form = TopicForm(request.POST)\r\n        if form.is_valid():\r\n            form.save()\r\n            return redirect('create_topics')  # Chuyển hướng trang sau khi tạo topic thành công\r\n    else:\r\n        form = TopicForm()\r\n\r\n    return render(request, 'create_topics.html', {'topics': topics, 'form': form})\r\n@method_decorator(login_required, name='dispatch')\r\nclass EditUserProfile(UpdateView):\r\n    model = UserProfile\r\n    fields = ['user', 'avatar', 'bio']  # Chỉ định các trường có thể chỉnh sửa\r\n    template_name = 'edit_user_profile.html'  # Tạo template để hiển thị biểu mẫu\r\n    success_url = reverse_lazy('user_profile_detail')\r\n@login_required\r\ndef view_profile(request):\r\n    try:\r\n        user_profile = UserProfile.objects.get(user=request.user)\r\n    except UserProfile.DoesNotExist:\r\n        user_profile = UserProfile.objects.create(user=request.user)\r\n\r\n    if request.method == 'POST':\r\n        image_id = request.POST.get('image_id')\r\n        image_to_add = Image.objects.get(pk=image_id)\r\n        user_profile.library.add(image_to_add)\r\n        return HttpResponse(status=200)\r\n\r\n    # Sắp xếp danh sách ảnh từ mới đến cũ\r\n    images = user_profile.library.all().order_by('-upload_date')\r\n    username = user_profile.user.username\r\n    user = User.objects.get(username=username)\r\n    image_upload = Image.objects.filter(user=user).order_by('-upload_date')\r\n\r\n    return render(request, 'profile.html', {'user_profile': user_profile, 'images': images,'images_upload':image_upload})\r\nclass UpdateProfile(UpdateView):\r\n    model = UserProfile\r\n    fields = ['avatar']\r\n    template_name = 'update_profile.html'\r\n    success_url = reverse_lazy('view_profile')\r\n\r\n    def form_valid(self, form):\r\n        response_data = {\"avatar_url\": form.instance.avatar.url}\r\n        return JsonResponse(response_data)\r\ndef search_images(request):\r\n    form = SearchForm(request.GET)\r\n    images = Image.objects.order_by('-upload_date')\r\n\r\n    if form.is_valid():\r\n        search_query = form.cleaned_data['search_query']\r\n        tag = form.cleaned_data['tag']\r\n        topic = form.cleaned_data['topic']\r\n\r\n        if search_query:\r\n            images = images.filter(caption__icontains=search_query)\r\n\r\n        if tag:\r\n            images = images.filter(tags__name__icontains=tag)\r\n\r\n        if topic:\r\n            images = images.filter(topics__name__icontains=topic)\r\n\r\n    return render(request, 'search_results.html', {'form': form, 'images': images})\r\ndef download_image(request, image_id):\r\n    image = get_object_or_404(Image, pk=image_id)\r\n    image_file = image.image.file\r\n    response = FileResponse(image_file, as_attachment=True)\r\n    response['Content-Disposition'] = f'attachment; filename=\"{image_file.name}\"'\r\n    return response\r\n\r\n@login_required\r\ndef remove_image_from_library(request, image_id):\r\n    user_profile = get_object_or_404(UserProfile, user=request.user)\r\n    image = get_object_or_404(Image, id=image_id)\r\n\r\n    # Kiểm tra xem ảnh có thuộc thư viện của người dùng không\r\n    if image in user_profile.library.all():\r\n        user_profile.library.remove(image)\r\n        user_profile.save()\r\n        return redirect('view_profile')\r\n    else:\r\n        # Xử lý trường hợp ảnh không tồn tại trong thư viện\r\n        # Hoặc đã bị xóa trước đó\r\n        return redirect('view_profile')\r\ndef topic_detail(request, topic_id):\r\n    # Lấy thông tin chủ đề hoặc trả về 404 nếu không tìm thấy\r\n    topic = get_object_or_404(Topic, pk=topic_id)\r\n\r\n    # Lấy danh sách các ảnh thuộc chủ đề đó\r\n    images = Image.objects.filter(topics=topic)\r\n\r\n    return render(request, 'topic_detail.html', {'topic': topic, 'images': images})\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/E:/pythonProject/PhotoShareDjango/photoshare/views.py b/E:/pythonProject/PhotoShareDjango/photoshare/views.py
+--- a/E:/pythonProject/PhotoShareDjango/photoshare/views.py	
++++ b/E:/pythonProject/PhotoShareDjango/photoshare/views.py	
+@@ -92,56 +92,6 @@
+     def get(self, request, image_id):
+         image = Image.objects.get(pk=image_id)
+         return render(request, 'view_image.html', {'image': image})
+-
+-# def upload_image(request):
+-#     if request.method == 'POST':
+-#         form = ImageUploadForm(request.POST, request.FILES)
+-#         if form.is_valid():
+-#             form.save()
+-#             return redirect('success_page')  # Chuyển hướng đến trang thành công sau khi tải lên
+-#     else:
+-#         form = ImageUploadForm()
+-#     return render(request, 'upload_image.html', {'form': form})
+-# @login_required
+-# @csrf_exempt
+-# def upload_image(request):
+-#     if request.method == 'POST' and request.FILES:
+-#         uploaded_file = request.FILES['file']
+-#         user = request.user
+-#
+-#         # Đảm bảo thư mục lưu trữ tồn tại
+-#         storage_dir = os.path.join(settings.MEDIA_ROOT, 'uploads', str(user.id))
+-#         os.makedirs(storage_dir, exist_ok=True)
+-#
+-#         # Lưu tệp vào thư mục lưu trữ
+-#         file_path = os.path.join(storage_dir, uploaded_file.name)
+-#         with open(file_path, 'wb+') as destination:
+-#             for chunk in uploaded_file.chunks():
+-#                 destination.write(chunk)
+-#
+-#         # Trả về một JSON response cho client
+-#         response_data = {'message': 'Hình ảnh đã được tải lên thành công.'}
+-#         return JsonResponse(response_data)
+-#     else:
+-#         return JsonResponse({'error': 'Yêu cầu không hợp lệ.'})
+-# @login_required
+-# def upload_image(request):
+-#     if request.method == 'POST':
+-#         form = ImageUploadForm(request.POST, request.FILES)
+-#         if form.is_valid():
+-#             # Gán người dùng hiện tại cho hình ảnh trước khi lưu vào cơ sở dữ liệu
+-#             image = form.save(commit=False)
+-#             image.user = request.user
+-#             image.save()
+-#             request.user.userprofile.library.add(image)
+-#             image_url = image.image.url
+-#
+-#             # Trả về đường dẫn ảnh bằng JsonResponse
+-#             response_data = {'image_url': image_url}
+-#             return JsonResponse(response_data)
+-#     else:
+-#         form = ImageUploadForm()
+-#     return render(request, 'upload_image.html', {'form': form})
+ @login_required
+ def upload_image(request):
+     if request.method == 'POST':
+@@ -161,10 +111,8 @@
+ def topic_detail(request, topic_id):
+     # Lấy thông tin chủ đề hoặc trả về 404 nếu không tìm thấy
+     topic = get_object_or_404(Topic, pk=topic_id)
+-
+     # Lấy danh sách các ảnh thuộc chủ đề đó
+     images = Image.objects.filter(topics=topic)
+-
+     return render(request, 'topic_detail.html', {'topic': topic, 'images': images})
+ def image_detail(request, image_id):
+     image = get_object_or_404(Image, pk=image_id)
+@@ -191,7 +139,6 @@
+ def save_image_to_library(request, image_id):
+     # Lấy đối tượng ảnh từ cơ sở dữ liệu
+     image = get_object_or_404(Image, pk=image_id)
+-
+     # Kiểm tra nếu ảnh đã tồn tại trong thư viện của người dùng thì không thêm nữa
+     if not request.user.userprofile.library.filter(pk=image_id).exists():
+         # Thêm ảnh vào thư viện của người dùng
+Index: E:/pythonProject/.idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"c7e00893-1b39-4dd6-9d81-ef58cab93b40\" name=\"Changes\" comment=\"ttan: add image\">\r\n      <change beforePath=\"E:/pythonProject/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"E:/pythonProject/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"E:/pythonProject/PhotoShareDjango/photoshare/urls.py\" beforeDir=\"false\" afterPath=\"E:/pythonProject/PhotoShareDjango/photoshare/urls.py\" afterDir=\"false\" />\r\n      <change beforePath=\"E:/pythonProject/PhotoShareDjango/photoshare/views.py\" beforeDir=\"false\" afterPath=\"E:/pythonProject/PhotoShareDjango/photoshare/views.py\" afterDir=\"false\" />\r\n      <change beforePath=\"E:/pythonProject/PhotoShareDjango/templates/home.html\" beforeDir=\"false\" afterPath=\"E:/pythonProject/PhotoShareDjango/templates/home.html\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"HTML File\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"E:/pythonProject\" />\r\n    <option name=\"UPDATE_TYPE\" value=\"REBASE\" />\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"2WhVKVh3C1dFLITTFlDCydwoAJ1\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">{\r\n  &quot;keyToString&quot;: {\r\n    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,\r\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\r\n    &quot;git-widget-placeholder&quot;: &quot;main&quot;,\r\n    &quot;last_opened_file_path&quot;: &quot;E:/pythonProject/PhotoShareDjango/templates&quot;\r\n  }\r\n}</component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"CopyFile.RECENT_KEYS\">\r\n      <recent name=\"E:\\pythonProject\\PhotoShareDjango\\templates\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"RunManager\">\r\n    <configuration name=\"main\" type=\"PythonConfigurationType\" factoryName=\"Python\" nameIsGenerated=\"true\">\r\n      <module name=\"pythonProject\" />\r\n      <option name=\"INTERPRETER_OPTIONS\" value=\"\" />\r\n      <option name=\"PARENT_ENVS\" value=\"true\" />\r\n      <envs>\r\n        <env name=\"PYTHONUNBUFFERED\" value=\"1\" />\r\n      </envs>\r\n      <option name=\"SDK_HOME\" value=\"\" />\r\n      <option name=\"WORKING_DIRECTORY\" value=\"E:/pythonProject\" />\r\n      <option name=\"IS_MODULE_SDK\" value=\"true\" />\r\n      <option name=\"ADD_CONTENT_ROOTS\" value=\"true\" />\r\n      <option name=\"ADD_SOURCE_ROOTS\" value=\"true\" />\r\n      <option name=\"SCRIPT_NAME\" value=\"E:/pythonProject/main.py\" />\r\n      <option name=\"PARAMETERS\" value=\"\" />\r\n      <option name=\"SHOW_COMMAND_LINE\" value=\"false\" />\r\n      <option name=\"EMULATE_TERMINAL\" value=\"false\" />\r\n      <option name=\"MODULE_MODE\" value=\"false\" />\r\n      <option name=\"REDIRECT_INPUT\" value=\"false\" />\r\n      <option name=\"INPUT_FILE\" value=\"\" />\r\n      <method v=\"2\" />\r\n    </configuration>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"c7e00893-1b39-4dd6-9d81-ef58cab93b40\" name=\"Changes\" comment=\"\" />\r\n      <created>1697184734321</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1697184734321</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"ttan: sửa giao diện\">\r\n      <created>1697218542003</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1697218542003</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"ttan: add uploaded_image in userprofile\">\r\n      <created>1697470847231</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1697470847231</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00003\" summary=\"ttan: add image\">\r\n      <created>1697556897273</created>\r\n      <option name=\"number\" value=\"00003\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1697556897273</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"4\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"ttan: sửa giao diện\" />\r\n    <MESSAGE value=\"ttan: add uploaded_image in userprofile\" />\r\n    <MESSAGE value=\"ttan: add image\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"ttan: add image\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/E:/pythonProject/.idea/workspace.xml b/E:/pythonProject/.idea/workspace.xml
+--- a/E:/pythonProject/.idea/workspace.xml	
++++ b/E:/pythonProject/.idea/workspace.xml	
+@@ -4,11 +4,9 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="c7e00893-1b39-4dd6-9d81-ef58cab93b40" name="Changes" comment="ttan: add image">
++    <list default="true" id="c7e00893-1b39-4dd6-9d81-ef58cab93b40" name="Changes" comment="ttan: add paginator">
+       <change beforePath="E:/pythonProject/.idea/workspace.xml" beforeDir="false" afterPath="E:/pythonProject/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="E:/pythonProject/PhotoShareDjango/photoshare/urls.py" beforeDir="false" afterPath="E:/pythonProject/PhotoShareDjango/photoshare/urls.py" afterDir="false" />
+       <change beforePath="E:/pythonProject/PhotoShareDjango/photoshare/views.py" beforeDir="false" afterPath="E:/pythonProject/PhotoShareDjango/photoshare/views.py" afterDir="false" />
+-      <change beforePath="E:/pythonProject/PhotoShareDjango/templates/home.html" beforeDir="false" afterPath="E:/pythonProject/PhotoShareDjango/templates/home.html" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -97,7 +95,14 @@
+       <option name="project" value="LOCAL" />
+       <updated>1697556897273</updated>
+     </task>
+-    <option name="localTasksCounter" value="4" />
++    <task id="LOCAL-00004" summary="ttan: add paginator">
++      <created>1697616402452</created>
++      <option name="number" value="00004" />
++      <option name="presentableId" value="LOCAL-00004" />
++      <option name="project" value="LOCAL" />
++      <updated>1697616402452</updated>
++    </task>
++    <option name="localTasksCounter" value="5" />
+     <servers />
+   </component>
+   <component name="Vcs.Log.Tabs.Properties">
+@@ -115,6 +120,7 @@
+     <MESSAGE value="ttan: sửa giao diện" />
+     <MESSAGE value="ttan: add uploaded_image in userprofile" />
+     <MESSAGE value="ttan: add image" />
+-    <option name="LAST_COMMIT_MESSAGE" value="ttan: add image" />
++    <MESSAGE value="ttan: add paginator" />
++    <option name="LAST_COMMIT_MESSAGE" value="ttan: add paginator" />
+   </component>
+ </project>
+\ No newline at end of file

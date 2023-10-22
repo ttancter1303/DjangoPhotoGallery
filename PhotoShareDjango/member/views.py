@@ -48,16 +48,12 @@ def sign_up(request):
             user = form.save(commit=False)
             user.username = user.username.lower()
             user.save()
-
-            # Tạo UserProfile cho người dùng mới đăng ký
             user_profile = UserProfile.objects.create(user=user)
-
-            default_image = Image.objects.get(name='default')  # Thay bằng truy vấn thích hợp
+            default_image = Image.objects.create(user=user, image='media/default-avatar.jpg')
             user_profile.library.add(default_image)
-
             messages.success(request, 'You have signed up successfully.')
             login(request, user)
-            return redirect('images')
+            return redirect('home')
         else:
             return render(request, 'register.html', {'form': form})
 

@@ -22,7 +22,6 @@
     <div class="box-item image-gallery">
       {% for image in images %}
       <div class="image-item">
-
         <a href="{% url 'image_detail' image_id=image.id %}">
           <img src="{{ image.image.url }}" alt="{{ image.caption }}" />
         </a>

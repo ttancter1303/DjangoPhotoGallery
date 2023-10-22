@@ -4,15 +4,22 @@
 {% block content %}
   <h1>{{ topic.name }}</h1>
   <p>{{ topic.description }}</p>
-
+{% if not message %}
   <h2>Các ảnh trong chủ đề "{{ topic.name }}"</h2>
-  <div class="image-list">
-    {% for image in images %}
+  <div class="py-5 bg-light">
+    <div class="box-item image-gallery">
+      {% for image in images %}
       <div class="image-item">
-        <img src="{{ image.image.url }}" alt="{{ image.title }}">
-        <h3>{{ image.title }}</h3>
-        <p>{{ image.description }}</p>
+        <a href="{% url 'image_detail' image_id=image.id %}">
+          <img src="{{ image.image.url }}" alt="{{ image.caption }}" />
+        </a>
+        <div>
+          <p>{{ image.caption }}</p>
+        </div>
       </div>
-    {% endfor %}
+      {% endfor %}
+    </div>
   </div>
+{% endif %}
+    <h2>{{ message }}</h2>
 {% endblock %}

@@ -10,10 +10,6 @@
   margin-bottom: 20px;
 }
 
-.image {
-  margin-top: 50px;
-  width: 500px;
-}
 
 .button-container {
   display: flex;
@@ -73,11 +69,6 @@ button {
   border-radius: 5px;
   cursor: pointer;
 }
-
-button:hover {
-  background-color: #0056b3;
-}
-
 #id_caption {
   width: 300px;
   height: 32px;
