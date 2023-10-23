@@ -226,8 +226,8 @@ def create_topics(request):
 @method_decorator(login_required, name='dispatch')
 class EditUserProfile(UpdateView):
     model = UserProfile
-    fields = ['user', 'avatar', 'bio']  # Chỉ định các trường có thể chỉnh sửa
-    template_name = 'edit_user_profile.html'  # Tạo template để hiển thị biểu mẫu
+    fields = ['user', 'avatar', 'bio']
+    template_name = 'edit_user_profile.html'
     success_url = reverse_lazy('user_profile_detail')
 @login_required
 def view_profile(request):
@@ -241,8 +241,6 @@ def view_profile(request):
         image_to_add = Image.objects.get(pk=image_id)
         user_profile.library.add(image_to_add)
         return HttpResponse(status=200)
-
-    # Sắp xếp danh sách ảnh từ mới đến cũ
     images = user_profile.library.all().order_by('-upload_date')
     username = user_profile.user.username
     user = User.objects.get(username=username)

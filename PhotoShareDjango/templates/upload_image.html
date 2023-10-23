@@ -1,41 +1,52 @@
 {% extends "base.html" %}
 <script>
-  var uploadImageUrl = "{% url 'upload_image' %}";
+    var uploadImageUrl = "{% url 'upload_image' %}";
 </script>
 {% block content %}
 <h2>Tải lên hình ảnh</h2>
 
 <form class="image-upload-form" method="post" enctype="multipart/form-data">
-  <div id="drop-area">
-  <h2>Thả ảnh vào hoặc chọn file</h2>
-  <input type="file" id="fileInput" accept="image/*" style="display: none;">
-  </div>
-  {% csrf_token %}
-  <fieldset>
-    {{ form.image.label_tag }}
-    {{ form.image }}
-  </fieldset>
-  <fieldset>
-    {{ form.caption.label_tag }}
-    {{ form.caption }}
-  </fieldset>
-  <fieldset>
-    {{ form.tags.label_tag }}
-    {{ form.tags }}
-  </fieldset>
-  <fieldset>
-    {{ form.topics.label_tag }}
-    {{ form.topics }}
-  </fieldset>
-  <button type="submit">Tải lên</button>
+    <div id="drop-area">
+        <h2>Thả ảnh vào hoặc chọn file</h2>
+        <div id="uploaded-image" class="d-none">
+            <h3 class="w-100">Hình ảnh đã tải lên:</h3>
+            <img id="uploaded-image-preview" class="w-100" style="object-fit:contain;" src="" alt="Hình ảnh đã tải lên">
+        </div>
+        <input type="file" id="fileInput" accept="image/*" style="display: none;">
+    </div>
+    {% csrf_token %}
+    <fieldset>
+        {{ form.image.label_tag }}
+        {{ form.image }}
+    </fieldset>
+    <fieldset>
+        {{ form.caption.label_tag }}
+        {{ form.caption }}
+    </fieldset>
+    <fieldset>
+        {{ form.tags.label_tag }}
+        {{ form.tags }}
+    </fieldset>
+    <fieldset>
+        {{ form.topics.label_tag }}
+        {{ form.topics }}
+    </fieldset>
+    <button type="submit">Tải lên</button>
 </form>
 <div id="progress-container" style="display: none;">
-  <div id="progress-bar"></div>
-  <div id="progress-text">Tải lên: <span id="progress-percent">0%</span></div>
+    <div id="progress-bar"></div>
+    <div id="progress-text">Tải lên: <span id="progress-percent">0%</span></div>
 </div>
-<div id="uploaded-image" style="display: none;">
-  <h3>Hình ảnh đã tải lên:</h3>
-  <img id="uploaded-image-preview" src="" alt="Hình ảnh đã tải lên">
-</div>
+
+<script>
+    $('#id_image').change(()=>{
+      $('#uploaded-image').removeClass('d-none');
+      var output = $('#uploaded-image-preview');
+      output.attr('src',URL.createObjectURL(event.target.files[0]));
+      output.load(()=>{
+        URL.revokeObjectURL(output.src)
+      });
+    });
+</script>
 <a href="{% url 'success_page' %}" style="display: none;" id="success-link">Đã tải lên thành công</a>
 {% endblock %}

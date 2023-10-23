@@ -4,12 +4,14 @@
   <head>
     <meta charset="utf-8">
     <title>{% block title %} Photo Gallery {% endblock %}</title>
+    <script src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
+    <script src="{% static 'js/popper.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
     <link href="https://fonts.googleapis.com/css?family=Peralta" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="{% static 'css/gallery.css' %}">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
     {% block stylesheet %}
     {% endblock %}  <!-- Thêm khối 'css' -->
   </head>
@@ -76,9 +78,6 @@
     {% endblock body %}  <!-- Thêm khối 'body' -->
 
     <!-- js -->
-    <script src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
-    <script src="{% static 'js/popper.min.js' %}"></script>
-    <script src="{% static 'js/bootstrap.min.js' %}"></script>
     <script src="{% static 'js/upload-image.js' %}"></script>
   </body>
 </html>
